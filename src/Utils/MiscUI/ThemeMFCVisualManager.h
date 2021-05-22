@@ -23,11 +23,11 @@ class CThemeMFCVisualManager : public CMFCVisualManagerOffice2007
 {
 public:
 	CThemeMFCVisualManager();
-	virtual ~CThemeMFCVisualManager();
+	~CThemeMFCVisualManager() override;
 
 	DECLARE_DYNCREATE(CThemeMFCVisualManager)
 
-	virtual void OnUpdateSystemColors() override;
+	void OnUpdateSystemColors() override;
 	virtual void OnFillBarBackground(CDC* pDC, CBasePane* pBar, CRect rectClient, CRect rectClip, BOOL bNCArea = FALSE);
 	virtual BOOL IsOwnerDrawMenuCheck();
 	virtual void OnDrawMenuCheck(CDC* pDC, CMFCToolBarMenuButton* pButton, CRect rect, BOOL bHighlight, BOOL bIsRadio);

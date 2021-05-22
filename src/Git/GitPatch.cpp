@@ -35,7 +35,6 @@ GitPatch::GitPatch()
 	, m_bSuccessfullyPatched(false)
 	, m_nRejected(0)
 	, m_pProgDlg(nullptr)
-	, m_patch()
 {
 }
 

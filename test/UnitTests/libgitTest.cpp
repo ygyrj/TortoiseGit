@@ -216,7 +216,7 @@ TEST(libgit, RefreshIndex)
 
 	output.Empty();
 	EXPECT_EQ(0, g_Git.Run(L"git.exe add 1.enc", &output, CP_UTF8));
-	if (!g_Git.ms_bCygwinGit) // on AppVeyor with the VS2017 image we get a warning: "WARNING: can't open config file: /usr/local/ssl/openssl.cnf"
+	if (!CGit::ms_bCygwinGit) // on AppVeyor with the VS2017 image we get a warning: "WARNING: can't open config file: /usr/local/ssl/openssl.cnf"
 		EXPECT_STREQ(L"", output);
 
 	WIN32_FILE_ATTRIBUTE_DATA fdata;

@@ -23,8 +23,6 @@
 
 class CGitFileName;
 
-#include "GitHash.h"
-
 typedef enum type_git_wc_status_kind
 {
 	git_wc_status_none,

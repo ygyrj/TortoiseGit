@@ -31,9 +31,9 @@ class CToolTips : public CToolTipCtrl
 {
 // Construction
 public:
-	virtual BOOL Create(CWnd* pParentWnd, DWORD dwStyle = 0);
+	BOOL Create(CWnd* pParentWnd, DWORD dwStyle = 0) override;
 	CToolTips() : CToolTipCtrl(), m_pParentWnd(nullptr), m_themeCallbackId(0) {}
-	virtual ~CToolTips() {}
+	~CToolTips() override = default;
 
 	BOOL AddTool(CWnd* pWnd, UINT nIDText, LPCRECT lpRectTool = nullptr, UINT_PTR nIDTool = 0);
 	BOOL AddTool(CWnd* pWnd, LPCWSTR lpszText = LPSTR_TEXTCALLBACK, LPCRECT lpRectTool = nullptr, UINT_PTR nIDTool = 0);

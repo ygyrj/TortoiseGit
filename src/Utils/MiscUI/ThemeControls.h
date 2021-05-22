@@ -28,9 +28,9 @@ public:
 	{
 	}
 
-	virtual void OnDraw(CDC* pDC, const CRect& rect, UINT uiState) override;
-	virtual void OnFillBackground(CDC* pDC, const CRect& rectClient) override;
-	virtual void OnDrawBorder(CDC* pDC, CRect& rectClient, UINT uiState) override;
+	void OnDraw(CDC* pDC, const CRect& rect, UINT uiState) override;
+	void OnFillBackground(CDC* pDC, const CRect& rectClient) override;
+	void OnDrawBorder(CDC* pDC, CRect& rectClient, UINT uiState) override;
 };
 
 /// a CThemeMFCMenuButton which draws properly in dark mode
@@ -41,9 +41,9 @@ public:
 		: CMFCMenuButton()
 	{
 	}
-	virtual void OnDraw(CDC* pDC, const CRect& rect, UINT uiState) override;
-	virtual void OnDrawFocusRect(CDC* pDC, const CRect& rectClient) override;
-	virtual void OnDrawBorder(CDC* pDC, CRect& rectClient, UINT uiState) override;
+	void OnDraw(CDC* pDC, const CRect& rect, UINT uiState) override;
+	void OnDrawFocusRect(CDC* pDC, const CRect& rectClient) override;
+	void OnDrawBorder(CDC* pDC, CRect& rectClient, UINT uiState) override;
 
 	virtual BOOL IsPressed() { return __super::IsPressed(); }
 

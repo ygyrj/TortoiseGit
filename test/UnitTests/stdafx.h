@@ -5,7 +5,7 @@
 #pragma once
 #define XMESSAGEBOX_APPREGPATH "Software\\TortoiseGit\\"
 
-#include <SDKDDKVer.h>
+#include <sdkddkver.h>
 
 #define NOMINMAX
 #include <algorithm>
@@ -15,8 +15,8 @@ using std::max;
 #include <afxwin.h>         // MFC core and standard components
 #include <afxext.h>         // MFC extensions
 #include <WinSock2.h>
-#include <Ws2tcpip.h>
-#include <Wspiapi.h>
+#include <WS2tcpip.h>
+#include <WSPiApi.h>
 #include <WinInet.h>
 
 #include <afxdtctl.h>		// MFC support for Internet Explorer 4 Common Controls

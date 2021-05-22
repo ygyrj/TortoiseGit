@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2011-2013 - Sven Strickroth <email@cs-ware.de>
 // Copyright (C) 2013-2014, 2016-2017 - TortoiseGit
@@ -26,14 +26,14 @@ class CMassiveGitTask : public CMassiveGitTaskBase
 {
 public:
 	CMassiveGitTask(CString params, BOOL isPath = TRUE, bool ignoreErrors = false);
-	~CMassiveGitTask();
+	~CMassiveGitTask() override;
 
 	bool					ExecuteWithNotify(CTGitPathList* pathList, volatile BOOL& cancel, CGitProgressList::WC_File_NotificationData::git_wc_notify_action_t action, CGitProgressList* instance);
 
 private:
-	virtual void			ReportError(const CString& out, int exitCode) override;
-	virtual void			ReportProgress(const CTGitPath& path, int index) override;
-	virtual void			ReportUserCanceled() override;
+	void			ReportError(const CString& out, int exitCode) override;
+	void			ReportProgress(const CTGitPath& path, int index) override;
+	void			ReportUserCanceled() override;
 	CGitProgressList *		m_NotifyCallbackInstance;
 	CGitProgressList::WC_File_NotificationData::git_wc_notify_action_t	m_NotifyCallbackAction;
 };

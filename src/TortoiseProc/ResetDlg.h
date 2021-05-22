@@ -28,21 +28,21 @@ class CResetDlg : public CHorizontalResizableStandAloneDialog, public CChooseVer
 
 public:
 	CResetDlg(CWnd* pParent = nullptr);   // standard constructor
-	virtual ~CResetDlg();
+	~CResetDlg() override;
 
 // Dialog Data
 	enum { IDD = IDD_RESET };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
-	virtual BOOL OnInitDialog() override;
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	BOOL OnInitDialog() override;
 	afx_msg void OnDestroy();
 	afx_msg void OnBnClickedChooseRadioHost();
 	afx_msg void OnBnClickedShow();
 	afx_msg void OnBnClickedButtonBrowseRefHost(){OnBnClickedButtonBrowseRef();}
 	LRESULT OnUpdateGUIHost(WPARAM data, LPARAM) { UpdateGUI(reinterpret_cast<GUI_UPDATE_DATA*>(data)); return 0; }
-	virtual void OnVersionChanged() override;
-	virtual void OnOK() override;
+	void OnVersionChanged() override;
+	void OnOK() override;
 	afx_msg void OnBnClickedShowModifiedFiles();
 
 	DECLARE_MESSAGE_MAP()

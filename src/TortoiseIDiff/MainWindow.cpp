@@ -21,6 +21,7 @@
 #include <CommCtrl.h>
 #include <Commdlg.h>
 #include "TortoiseIDiff.h"
+#include "resource.h"
 #include "MainWindow.h"
 #include "AboutDlg.h"
 #include "TaskbarUUID.h"
@@ -30,6 +31,7 @@
 #include "registry.h"
 #include "Theme.h"
 #include "DarkModeHelper.h"
+#include "ResString.h"
 
 #pragma comment(lib, "comctl32.lib")
 

@@ -33,12 +33,12 @@ public:
 
 private:
 	CWnd *	m_pWin;
-	CWinThread*			m_pLoadingThread;
+	CWinThread* m_pLoadingThread = nullptr;
 	static UINT LoadingThreadEntry(LPVOID pVoid)
 	{
 		return static_cast<CChooseVersion*>(pVoid)->LoadingThread();
 	};
-	volatile LONG 		m_bLoadingThreadRunning;
+	volatile LONG m_bLoadingThreadRunning = FALSE;
 
 protected:
 	CHistoryCombo	m_ChooseVersioinBranch;
@@ -47,8 +47,8 @@ protected:
 	CButton			m_RadioBranch;
 	CButton			m_RadioTag;
 	CString			m_pendingRefName;
-	bool			m_bNotFullName;
-	bool			m_bSkipCurrentBranch;
+	bool			m_bNotFullName = false;
+	bool			m_bSkipCurrentBranch = false;
 
 	typedef struct
 	{
@@ -288,18 +288,13 @@ protected:
 	}
 public:
 	CString m_VersionName;
-	bool	m_bIsBranch;
-	bool	m_bIsFirstTimeToSetFocus;
-	CChooseVersion(CWnd *win)
-	: m_bIsBranch(false)
-	, m_bIsFirstTimeToSetFocus(false)
-	, m_pLoadingThread(nullptr)
-	, m_bLoadingThreadRunning(FALSE)
-	, m_bNotFullName(true)
-	, m_bSkipCurrentBranch(false)
+	bool m_bIsBranch = false;
+	bool m_bIsFirstTimeToSetFocus = false;
+	CChooseVersion(CWnd* win)
+		: m_pWin(win)
 	{
-		m_pWin=win;
-	};
+	}
+	virtual ~CChooseVersion() = default;
 };
 
 #define CHOOSE_VERSION_DDX \

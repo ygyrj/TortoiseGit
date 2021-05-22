@@ -29,6 +29,8 @@ class GitPatch;
 class CPatchFilesDlgCallBack
 {
 public:
+	virtual ~CPatchFilesDlgCallBack() = default;
+
 	/**
 	 * Callback function. Called when the user double clicks on a
 	 * specific file to patch. The framework then has to process

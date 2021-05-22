@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2012-2013, 2015 - TortoiseGit
 
@@ -42,7 +42,7 @@ protected:
 
 public:
 	CSendMail(const CString& To, const CString& CC, bool m_bAttachment);
-	~CSendMail();
+	virtual ~CSendMail() = default;
 	virtual int Send(const CTGitPathList& list, CGitProgressList* instance) = 0;
 };
 
@@ -50,9 +50,8 @@ class CSendMailCombineable : public CSendMail
 {
 public:
 	CSendMailCombineable(const CString& To, const CString& CC, const CString& subject, bool bAttachment, bool bCombine);
-	~CSendMailCombineable();
 
-	virtual int Send(const CTGitPathList& list, CGitProgressList* instance) override;
+	int Send(const CTGitPathList& list, CGitProgressList* instance) override;
 
 protected:
 	virtual int SendAsSingleMail(const CTGitPath& path, CGitProgressList* instance);

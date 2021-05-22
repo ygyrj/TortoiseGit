@@ -125,7 +125,7 @@ public:
 	};
 
 private:
-	virtual void DoDataExchange(CDataExchange* pDX) override;	// DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;	// DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
 
@@ -177,7 +177,7 @@ private:
 
 	afx_msg void			OnBnClickedButtonRevision();
 
-	virtual BOOL			PreTranslateMessage(MSG* pMsg) override;
+	BOOL			PreTranslateMessage(MSG* pMsg) override;
 
 	void					UpdateDiffWithFileFromReg();
 	CString					m_sMarkForDiffFilename;

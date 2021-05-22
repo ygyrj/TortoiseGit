@@ -38,11 +38,11 @@ public:
 	enum { IDD = IDD_SETTINGSCOLORS_2 };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
-	virtual BOOL OnInitDialog() override;
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	BOOL OnInitDialog() override;
 	afx_msg void OnBnClickedColor();
 	afx_msg void OnBnClickedRestore();
-	virtual BOOL OnApply() override;
+	BOOL OnApply() override;
 
 	DECLARE_MESSAGE_MAP()
 

@@ -55,6 +55,8 @@ class CSciEdit;
 class CSciEditContextMenuInterface
 {
 public:
+	virtual ~CSciEditContextMenuInterface() = default;
+
 	/**
 	 * When the handler is called with this method, it can add entries
 	 * to the \a mPopup context menu itself. The \a nCmd param is the command
@@ -86,7 +88,7 @@ class CSciEdit : public CWnd
 	DECLARE_DYNAMIC(CSciEdit)
 public:
 	CSciEdit();
-	~CSciEdit();
+	~CSciEdit() override;
 
 	void				SetAStyle(int style, COLORREF fore, COLORREF back = ::GetSysColor(COLOR_WINDOW), int size = -1, const char* face = nullptr);
 	/**
@@ -173,9 +175,9 @@ private:
 
 	static bool IsValidURLChar(unsigned char ch);
 protected:
-	virtual BOOL OnChildNotify(UINT message, WPARAM wParam, LPARAM lParam, LRESULT* pLResult) override;
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
-	virtual ULONG GetGestureStatus(CPoint ptTouch) override;
+	BOOL OnChildNotify(UINT message, WPARAM wParam, LPARAM lParam, LRESULT* pLResult) override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
+	ULONG GetGestureStatus(CPoint ptTouch) override;
 	void		CheckSpelling(Sci_Position startpos, Sci_Position endpos);
 	void		SuggestSpellingAlternatives();
 	void		DoAutoCompletion(Sci_Position nMinPrefixLength);

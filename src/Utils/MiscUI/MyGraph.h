@@ -15,12 +15,12 @@ class MyGraphSeries : public CObject
 // Construction.
 public:
 	MyGraphSeries(const CString& sLabel = L"");
-	virtual ~MyGraphSeries();
+	~MyGraphSeries() override;
 
 // Declared but not defined.
 private:
-	MyGraphSeries(const MyGraphSeries& rhs);
-	MyGraphSeries& operator=(const MyGraphSeries& rhs);
+	MyGraphSeries(const MyGraphSeries& rhs) = delete;
+	MyGraphSeries& operator=(const MyGraphSeries& rhs) = delete;
 
 // Operations.
 public:
@@ -61,12 +61,12 @@ public:
 // Construction.
 public:
 	MyGraph(GraphType eGraphType = MyGraph::PieChart, bool bStackedGraph = false);
-	virtual ~MyGraph();
+	~MyGraph() override;
 
 // Declared but not defined.
 private:
-	MyGraph(const MyGraph& rhs);
-	MyGraph& operator=(const MyGraph& rhs);
+	MyGraph(const MyGraph& rhs) = delete;
+	MyGraph& operator=(const MyGraph& rhs) = delete;
 
 // Operations.
 public:
@@ -101,7 +101,7 @@ private:
 
 	CString	GetTipText() const;
 
-	INT_PTR	OnToolHitTest(CPoint point, TOOLINFO* pTI) const;
+	INT_PTR	OnToolHitTest(CPoint point, TOOLINFO* pTI) const override;
 
 	CPoint  WedgeEndFromDegrees(double degrees, const CPoint& ptCenter,
 					double radius) const;
@@ -118,7 +118,7 @@ private:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(MyGraph)
 	protected:
-	virtual void PreSubclassWindow();
+	void PreSubclassWindow() override;
 	//}}AFX_VIRTUAL
 
 // Generated message map functions

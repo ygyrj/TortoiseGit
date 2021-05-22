@@ -31,7 +31,7 @@ class CFileDropTarget : public CIDropTarget
 {
 public:
 	CFileDropTarget(HWND hTargetWnd):CIDropTarget(hTargetWnd){}
-	virtual bool OnDrop(FORMATETC* pFmtEtc, STGMEDIUM& medium, DWORD* /*pdwEffect*/, POINTL /*pt*/) override
+	bool OnDrop(FORMATETC* pFmtEtc, STGMEDIUM& medium, DWORD* /*pdwEffect*/, POINTL /*pt*/) override
 	{
 		if(pFmtEtc->cfFormat == CF_TEXT && medium.tymed == TYMED_ISTREAM)
 		{
@@ -149,13 +149,13 @@ class CFileDropEdit : public CEdit
 
 public:
 	CFileDropEdit();
-	virtual ~CFileDropEdit();
+	~CFileDropEdit() override;
 
 protected:
 	DECLARE_MESSAGE_MAP()
 
 	std::unique_ptr<CFileDropTarget> m_pDropTarget;
-	virtual void PreSubclassWindow();
+	void PreSubclassWindow() override;
 };
 
 

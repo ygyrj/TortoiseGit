@@ -20,7 +20,6 @@
 
 #include "stdafx.h"
 #include "BaseWindow.h"
-#include <memory>
 #include <Shlwapi.h>
 #include "DPIAware.h"
 

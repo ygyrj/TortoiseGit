@@ -6,7 +6,7 @@
 #define XMESSAGEBOX_APPREGPATH "Software\\TortoiseGit\\"
 #define REGSTRING_DARKTHEME L"Software\\TortoiseGit\\DarkTheme"
 
-#include <SDKDDKVer.h>
+#include <sdkddkver.h>
 
 #define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS	// some CString constructors will be explicit
 
@@ -21,8 +21,8 @@ using std::min;
 #include <afxwin.h>         // MFC core and standard components
 #include <afxext.h>         // MFC extensions
 #include <WinSock2.h>
-#include <Ws2tcpip.h>
-#include <Wspiapi.h>
+#include <WS2tcpip.h>
+#include <WSPiApi.h>
 
 #include <afxdtctl.h>		// MFC support for Internet Explorer 4 Common Controls
 #ifndef _AFX_NO_AFXCMN_SUPPORT
@@ -48,14 +48,15 @@ using std::min;
 #include <map>
 #include <set>
 #include <functional>
+#include <memory>
 
-#include <vfw.h>
-#include <shlobj.h>
+#include <Vfw.h>
+#include <ShlObj.h>
 #include <Shlwapi.h>
-#include <shlguid.h>
-#include <uxtheme.h>
+#include <ShlGuid.h>
+#include <Uxtheme.h>
 #include <dlgs.h>
-#include <wininet.h>
+#include <WinInet.h>
 #include <assert.h>
 #include <math.h>
 #include <gdiplus.h>

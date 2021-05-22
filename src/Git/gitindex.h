@@ -20,7 +20,6 @@
 #include "GitHash.h"
 #include "gitdll.h"
 #include "GitStatus.h"
-#include "UnicodeUtils.h"
 #include "ReaderWriterLock.h"
 #include "GitAdminDir.h"
 #include "StringUtils.h"

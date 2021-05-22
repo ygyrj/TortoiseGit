@@ -64,7 +64,7 @@ public:
 	 */
 	LONG GetTextWidth(LPCWSTR szText);
 
-	virtual ~CScrollTool();
+	~CScrollTool() override;
 
 protected:
 	DECLARE_MESSAGE_MAP()

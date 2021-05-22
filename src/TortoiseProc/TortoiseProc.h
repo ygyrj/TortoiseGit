@@ -45,12 +45,12 @@ class CTortoiseProcApp : public CWinAppEx
 {
 public:
 	CTortoiseProcApp();
-	~CTortoiseProcApp();
+	~CTortoiseProcApp() override;
 
 // Overrides
 public:
-	virtual BOOL InitInstance() override;
-	virtual int ExitInstance() override;
+	BOOL InitInstance() override;
+	int ExitInstance() override;
 
 	void CheckUpgrade();
 	void CheckForNewerVersion();

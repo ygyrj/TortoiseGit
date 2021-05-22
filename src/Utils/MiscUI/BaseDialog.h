@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2016 - TortoiseGit
 // Copyright (C) 2003-2007, 2010, 2012-2014 - TortoiseSVN
@@ -18,8 +18,6 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //
 #pragma once
-#include <string>
-
 
 /**
  * \ingroup Utils
@@ -30,6 +28,8 @@
 class CDialog
 {
 public:
+	virtual ~CDialog() = default;
+
 	INT_PTR DoModal(HINSTANCE hInstance, int resID, HWND hWndParent);
 	HWND	Create(HINSTANCE hInstance, int resID, HWND hWndParent);
 
@@ -37,8 +37,8 @@ public:
 
 	operator HWND() const {return m_hwnd;}
 protected:
-	HINSTANCE hResource;
-	HWND m_hwnd;
+	HINSTANCE hResource = nullptr;
+	HWND m_hwnd = nullptr;
 
 	void InitDialog(HWND hwndDlg, UINT iconID);
 

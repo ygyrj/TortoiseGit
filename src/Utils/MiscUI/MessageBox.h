@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2013-2017, 2021 - TortoiseGit
 // Copyright (C) 2003-2008 - TortoiseSVN
@@ -19,7 +19,6 @@
 //
 #pragma once
 
-#include "dlgtemplate.h"
 #include "cursor.h"
 
 #define IDC_MESSAGEBOX_BUTTON1 101
@@ -445,10 +444,10 @@ public:
 	afx_msg void OnButton1();
 	afx_msg void OnButton2();
 	afx_msg void OnButton3();
-	virtual BOOL OnInitDialog() override;
+	BOOL OnInitDialog() override;
 
 	BOOL m_bChecked;
 protected:
-	virtual void OnCancel() override;
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
+	void OnCancel() override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
 };

@@ -58,6 +58,7 @@ using std::min;
 #include <fstream>
 #include <set>
 #include <functional>
+#include <memory>
 
 #define USE_GDI_GRADIENT
 #define HISTORYCOMBO_WITH_SYSIMAGELIST

@@ -11,10 +11,12 @@
 using std::max;
 using std::min;
 
-#include <SDKDDKVer.h>
+#include <sdkddkver.h>
 
 #define WIN32_LEAN_AND_MEAN     // Exclude rarely-used stuff from Windows headers
-#include <windows.h>
+#include <Windows.h>
+
+#include "SmartHandle.h"
 
 #include "git2.h"
 #include "SmartLibgit2Ref.h"
@@ -23,6 +25,7 @@ using std::min;
 #include <set>
 #include <tuple>
 #include <memory>
+#include <string>
 
 #include <Shlwapi.h>
 #include <shellapi.h>

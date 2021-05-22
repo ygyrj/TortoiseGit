@@ -19,7 +19,6 @@
 //
 #include "stdafx.h"
 #include "Theme.h"
-#include "resource.h"
 #include "PathUtils.h"
 #include "StringUtils.h"
 #include "DarkModeHelper.h"

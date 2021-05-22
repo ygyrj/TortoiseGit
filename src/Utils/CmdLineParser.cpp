@@ -19,7 +19,6 @@
 //
 #include "stdafx.h"
 #include "CmdLineParser.h"
-#include <locale>
 #include <algorithm>
 
 const wchar_t CCmdLineParser::m_sDelims[] = L"-/";

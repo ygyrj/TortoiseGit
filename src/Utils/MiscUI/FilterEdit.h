@@ -18,7 +18,6 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //
 #pragma once
-#include <memory>
 
 /**
  * \ingroup Utils
@@ -27,6 +26,7 @@
 class IFilterEditValidator
 {
 public:
+	virtual ~IFilterEditValidator() = default;
 	virtual bool	Validate(LPCWSTR string) = 0;
 };
 
@@ -66,7 +66,7 @@ class CFilterEdit : public CEdit
 	DECLARE_DYNAMIC(CFilterEdit)
 public:
 	CFilterEdit();
-	virtual ~CFilterEdit();
+	~CFilterEdit() override;
 
 	static const UINT WM_FILTEREDIT_INFOCLICKED;
 	static const UINT WM_FILTEREDIT_CANCELCLICKED;
@@ -127,9 +127,9 @@ public:
 	void ValidateAndRedraw() { OnEnChange(); }
 
 protected:
-	virtual void	PreSubclassWindow() override;
-	virtual BOOL	PreTranslateMessage(MSG* pMsg) override;
-	virtual ULONG	GetGestureStatus(CPoint ptTouch) override;
+	void	PreSubclassWindow() override;
+	BOOL	PreTranslateMessage(MSG* pMsg) override;
+	ULONG	GetGestureStatus(CPoint ptTouch) override;
 
 	afx_msg BOOL	OnEraseBkgnd(CDC* pDC);
 	afx_msg void	OnLButtonUp(UINT nFlags, CPoint point);

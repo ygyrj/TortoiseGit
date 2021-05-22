@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2016 - TortoiseGit
 
@@ -37,10 +37,10 @@ public:
 	BOOL	m_bNoSave;
 
 protected:
-	virtual void	DoDataExchange(CDataExchange* pDX) override;
-	virtual LRESULT	OnWizardNext() override;
-	virtual BOOL	OnInitDialog() override;
-	virtual BOOL	OnSetActive() override;
+	void	DoDataExchange(CDataExchange* pDX) override;
+	LRESULT	OnWizardNext() override;
+	BOOL	OnInitDialog() override;
+	BOOL	OnSetActive() override;
 
 	afx_msg void	OnClickedNoSave();
 

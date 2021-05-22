@@ -29,7 +29,7 @@
 #include <locale>
 #include <codecvt>
 
-#include <Imagehlp.h>
+#include <ImageHlp.h>
 
 #pragma comment(lib, "Imagehlp.lib")
 

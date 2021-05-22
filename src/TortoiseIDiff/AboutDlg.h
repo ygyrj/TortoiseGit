@@ -27,7 +27,6 @@ class CAboutDlg : public CDialog
 {
 public:
     CAboutDlg(HWND hParent);
-    ~CAboutDlg();
 
     void                    SetHiddenWnd(HWND hWnd) {m_hHiddenWnd = hWnd;}
 protected:

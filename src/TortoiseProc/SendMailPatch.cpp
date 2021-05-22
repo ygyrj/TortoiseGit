@@ -27,10 +27,6 @@ CSendMailPatch::CSendMailPatch(const CString& To, const CString& CC, const CStri
 {
 }
 
-CSendMailPatch::~CSendMailPatch()
-{
-}
-
 int CSendMailPatch::SendAsSingleMail(const CTGitPath& path, CGitProgressList* instance)
 {
 	ASSERT(instance);

@@ -502,7 +502,7 @@ public:
 
 	static bool LoadTextFile(const CString &filename, CString &msg);
 
-	int GetGitNotes(const CGitHash& hash, CString& notes);
+	int GetGitNotes(const CGitHash& hash, CString& notes) const;
 	int SetGitNotes(const CGitHash& hash, const CString& notes);
 
 	int GetUnifiedDiff(const CTGitPath& path, const CString& rev1, const CString& rev2, CString patchfile, bool bMerge, bool bCombine, int diffContext, bool bNoPrefix = false);

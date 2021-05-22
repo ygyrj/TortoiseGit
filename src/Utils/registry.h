@@ -48,7 +48,9 @@ protected:
 	virtual LPCWSTR GetPlainString (const S& s) const = 0;
 	virtual DWORD GetLength (const S& s) const = 0;
 
-public: //methods
+public:
+	virtual ~CRegBaseCommon() = default;
+	//methods
 
 	/** Default constructor.
 	 */
@@ -180,8 +182,8 @@ protected:
 	 * String type specific operations.
 	 */
 
-	virtual LPCWSTR GetPlainString (const CString& s) const { return static_cast<LPCWSTR>(s); }
-	virtual DWORD GetLength (const CString& s) const {return s.GetLength();}
+	LPCWSTR GetPlainString (const CString& s) const override { return static_cast<LPCWSTR>(s); }
+	DWORD GetLength(const CString& s) const override { return s.GetLength(); }
 
 public: //methods
 
@@ -199,7 +201,7 @@ public: //methods
 	/**
 	 * Returns the string of the last error occurred.
 	 */
-	CString getErrorString()
+	CString getErrorString() override
 	{
 		CString error = CRegBaseCommon<CString>::getErrorString();
 #if defined IDS_REG_ERROR
@@ -228,8 +230,8 @@ protected:
 	 * String type specific operations.
 	 */
 
-	virtual LPCWSTR GetPlainString(const std::wstring& s) const { return s.c_str(); }
-	virtual DWORD GetLength(const std::wstring& s) const { return static_cast<DWORD>(s.size()); }
+	LPCWSTR GetPlainString(const std::wstring& s) const override { return s.c_str(); }
+	DWORD GetLength(const std::wstring& s) const override { return static_cast<DWORD>(s.size()); }
 
 public: //methods
 
@@ -560,8 +562,8 @@ private:
 	 * provide type-specific code to extract data from and write data to an open registry key.
 	 */
 
-	virtual void InternalRead (HKEY hKey, DWORD& value);
-	virtual void InternalWrite (HKEY hKey, const DWORD& value);
+	void InternalRead(HKEY hKey, DWORD& value) override;
+	void InternalWrite(HKEY hKey, const DWORD& value) override;
 
 public:
 
@@ -682,8 +684,8 @@ private:
 	 * provide type-specific code to extract data from and write data to an open registry key.
 	 */
 
-	virtual void InternalRead (HKEY hKey, typename Base::StringT& value);
-	virtual void InternalWrite (HKEY hKey, const typename Base::StringT& value);
+	void InternalRead(HKEY hKey, typename Base::StringT& value) override;
+	void InternalWrite(HKEY hKey, const typename Base::StringT& value) override;
 
 public:
 	CRegStringCommon();
@@ -803,8 +805,8 @@ private:
 	 * provide type-specific code to extract data from and write data to an open registry key.
 	 */
 
-	virtual void InternalRead (HKEY hKey, CRect& value);
-	virtual void InternalWrite (HKEY hKey, const CRect& value);
+	void InternalRead(HKEY hKey, CRect& value) override;
+	void InternalWrite(HKEY hKey, const CRect& value) override;
 
 public:
 	CRegRect();
@@ -816,7 +818,7 @@ public:
 	 * \param base a predefined base key like HKEY_LOCAL_MACHINE. see the SDK documentation for more information.
 	 */
 	CRegRect(const CString& key, const CRect& def = CRect(), bool force = false, HKEY base = HKEY_CURRENT_USER, REGSAM sam = 0);
-	~CRegRect();
+	~CRegRect() override = default;
 
 	CRegRect& operator=(const CRect& rhs) {CRegTypedBase<CRect, CRegBase>::operator =(rhs); return *this;}
 	operator LPCRECT() { return static_cast<const CRect>(*this); }
@@ -889,8 +891,8 @@ private:
 	 * provide type-specific code to extract data from and write data to an open registry key.
 	 */
 
-	virtual void InternalRead (HKEY hKey, CPoint& value);
-	virtual void InternalWrite (HKEY hKey, const CPoint& value);
+	void InternalRead(HKEY hKey, CPoint& value) override;
+	void InternalWrite(HKEY hKey, const CPoint& value) override;
 
 public:
 	CRegPoint();
@@ -902,7 +904,7 @@ public:
 	 * \param base a predefined base key like HKEY_LOCAL_MACHINE. see the SDK documentation for more information.
 	 */
 	CRegPoint(const CString& key, const CPoint& def = CPoint(), bool force = false, HKEY base = HKEY_CURRENT_USER, REGSAM sam = 0);
-	~CRegPoint();
+	~CRegPoint() override = default;
 
 	CRegPoint& operator=(const CPoint& rhs) {CRegTypedBase<CPoint, CRegBase>::operator =(rhs); return *this;}
 	CRegPoint& operator+=(CPoint p) { return *this = p + *this; }

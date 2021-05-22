@@ -36,11 +36,11 @@ public:
 	enum { IDD = IDD_FIRSTSTARTWIZARD_GIT };
 
 protected:
-	virtual void	DoDataExchange(CDataExchange* pDX) override;
-	virtual LRESULT	OnWizardNext() override;
-	virtual BOOL	OnInitDialog() override;
-	virtual BOOL	OnSetActive() override;
-	virtual BOOL	PreTranslateMessage(MSG* pMsg) override;
+	void	DoDataExchange(CDataExchange* pDX) override;
+	LRESULT	OnWizardNext() override;
+	BOOL	OnInitDialog() override;
+	BOOL	OnSetActive() override;
+	BOOL	PreTranslateMessage(MSG* pMsg) override;
 
 	DECLARE_MESSAGE_MAP()
 

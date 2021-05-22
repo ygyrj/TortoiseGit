@@ -29,7 +29,6 @@
 #include "Colors.h"
 #include "LogDlgHelper.h"
 #include "GitRevLoglist.h"
-#include "lanes.h"
 #include "GitLogCache.h"
 #include <regex>
 #include "GitStatusListCtrl.h"
@@ -216,7 +215,7 @@ class CGitLogListBase : public CHintCtrl<CResizableColumnsListCtrl<CListCtrl>>, 
 
 public:
 	CGitLogListBase();
-	virtual ~CGitLogListBase();
+	~CGitLogListBase() override;
 	ProjectProperties	m_ProjectProperties;
 
 	void UpdateProjectProperties()
@@ -566,8 +565,8 @@ protected:
 	virtual void OnNMDblclkLoglist(NMHDR * /*pNMHDR*/, LRESULT *pResult);
 	afx_msg void OnLvnOdfinditemLoglist(NMHDR *pNMHDR, LRESULT *pResult);
 	void PreSubclassWindow() override;
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
-	virtual ULONG GetGestureStatus(CPoint ptTouch) override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
+	ULONG GetGestureStatus(CPoint ptTouch) override;
 	static UINT LogThreadEntry(LPVOID pVoid);
 	UINT LogThread();
 	bool IsOnStash(int index);
@@ -577,7 +576,7 @@ protected:
 	void FetchTrackingBranchList();
 
 	virtual afx_msg BOOL OnToolTipText(UINT id, NMHDR* pNMHDR, LRESULT* pResult);
-	virtual INT_PTR OnToolHitTest(CPoint point, TOOLINFO* pTI) const override;
+	INT_PTR OnToolHitTest(CPoint point, TOOLINFO* pTI) const override;
 	CString GetToolTipText(int nItem, int nSubItem);
 
 	/** Checks whether a referenfe label is under pt and returns the index/type

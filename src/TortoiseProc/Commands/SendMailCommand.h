@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2009-2013 - TortoiseGit
 
@@ -29,5 +29,5 @@ public:
 	/**
 	 * Executes the command.
 	 */
-	virtual bool			Execute() override;
+	bool			Execute() override;
 };

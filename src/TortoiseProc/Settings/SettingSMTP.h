@@ -34,8 +34,8 @@ public:
 // Dialog Data
 	enum { IDD = IDD_SETTINGSMTP };
 
-	virtual BOOL OnInitDialog() override;
-	virtual BOOL OnApply() override;
+	BOOL OnInitDialog() override;
+	BOOL OnApply() override;
 	afx_msg void OnModified();
 	afx_msg void OnModifiedEncryptionCombo();
 	afx_msg void OnModifiedDeliveryCombo();
@@ -43,7 +43,7 @@ public:
 	afx_msg void OnBnClickedClearCredentials();
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
 

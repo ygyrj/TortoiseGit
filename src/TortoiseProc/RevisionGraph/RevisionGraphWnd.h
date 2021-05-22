@@ -128,7 +128,7 @@ class CRevisionGraphWnd : public CWnd //, public CRevisionGraph
 {
 public:
 	CRevisionGraphWnd();	// standard constructor
-	virtual ~CRevisionGraphWnd();
+	~CRevisionGraphWnd() override;
 	enum
 	{
 		IDD = IDD_REVISIONGRAPH,
@@ -243,14 +243,14 @@ protected:
 
 	int GetLeftRightMargin() const { return 20; };
 	int GetTopBottomMargin() const { return 5; };
-	virtual void	DoDataExchange(CDataExchange* pDX) override;	// DDX/DDV support
+	void	DoDataExchange(CDataExchange* pDX) override;	// DDX/DDV support
 	afx_msg void	OnPaint();
-	virtual ULONG	GetGestureStatus(CPoint ptTouch) override;
+	ULONG	GetGestureStatus(CPoint ptTouch) override;
 	afx_msg BOOL	OnEraseBkgnd(CDC* pDC);
 	afx_msg void	OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 	afx_msg void	OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 	afx_msg void	OnSize(UINT nType, int cx, int cy);
-	afx_msg INT_PTR OnToolHitTest(CPoint point, TOOLINFO* pTI) const;
+	afx_msg INT_PTR OnToolHitTest(CPoint point, TOOLINFO* pTI) const override;
 	afx_msg void	OnLButtonDown(UINT nFlags, CPoint point);
 	afx_msg BOOL	OnToolTipNotify(UINT id, NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg BOOL	OnMouseWheel(UINT nFlags, short zDelta, CPoint pt);

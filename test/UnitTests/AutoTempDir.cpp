@@ -19,7 +19,6 @@
 
 #include "stdafx.h"
 #include "AutoTempDir.h"
-#include "TGitPath.h"
 
 CAutoTempDir::CAutoTempDir()
 {

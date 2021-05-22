@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2013-2014 - TortoiseGit
 
@@ -22,14 +22,10 @@ class ResetProgressCommand : public ProgressCommand
 {
 private:
 	CString	m_revision;
-	int		m_resetType;
+	int		m_resetType = 0;
 
 public:
-	ResetProgressCommand()
-	: m_resetType(0)
-	{}
-
 	void SetRevision(const CString& revision) { m_revision = revision; }
 	void SetResetType(int resetType){ m_resetType = resetType; }
-	virtual bool Run(CGitProgressList* list, CString& sWindowTitle, int& m_itemCountTotal, int& m_itemCount) override;
+	bool Run(CGitProgressList* list, CString& sWindowTitle, int& m_itemCountTotal, int& m_itemCount) override;
 };

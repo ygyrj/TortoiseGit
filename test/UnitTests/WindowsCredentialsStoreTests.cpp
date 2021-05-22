@@ -20,7 +20,7 @@
 #include "stdafx.h"
 #include "WindowsCredentialsStore.h"
 
-#define CREDENDIALSTORETESTENTRY L"TGitUnitTest-TestEntry"
+constexpr auto CREDENDIALSTORETESTENTRY = L"TGitUnitTest-TestEntry";
 
 TEST(WindowsCredentialsStore, GetSetOverrideDelete)
 {

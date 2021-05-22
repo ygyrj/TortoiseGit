@@ -35,8 +35,8 @@ public:
 	CString m_sRemote;
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
-	virtual BOOL OnInitDialog() override;
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	BOOL OnInitDialog() override;
 
 	DECLARE_MESSAGE_MAP()
 
@@ -45,7 +45,7 @@ protected:
 
 	void Refresh();
 
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
 
 	afx_msg void OnBnClickedSelectall();
 	afx_msg void OnBnClickedOk();

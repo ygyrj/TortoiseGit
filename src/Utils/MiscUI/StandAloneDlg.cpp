@@ -43,11 +43,6 @@ END_MESSAGE_MAP()
 IMPLEMENT_DYNAMIC(CResizableStandAloneDialog, CDialog)
 CResizableStandAloneDialog::CResizableStandAloneDialog(UINT nIDTemplate, CWnd* pParentWnd /*= nullptr*/)
 	: CStandAloneDialogTmpl<CResizableDialog>(nIDTemplate, pParentWnd)
-	, m_bVertical(false)
-	, m_bHorizontal(false)
-	, m_nResizeBlock(0)
-	, m_height(0)
-	, m_width(0)
 {
 }
 

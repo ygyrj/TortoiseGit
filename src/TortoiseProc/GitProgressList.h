@@ -130,12 +130,12 @@ public:
 		} git_wc_notify_action_t;
 
 		WC_File_NotificationData(const CTGitPath& path, git_wc_notify_action_t action);
-		virtual void SetColorCode(CColors& colors) override;
+		void SetColorCode(CColors& colors) override;
 
 		git_wc_notify_action_t action;
 
-		virtual void GetContextMenu(CIconMenu& popup, ContextMenuActionList& actions) override;
-		virtual void HandleDblClick() const override;
+		void GetContextMenu(CIconMenu& popup, ContextMenuActionList& actions) override;
+		void HandleDblClick() const override;
 	};
 
 	void AddNotify(NotificationData* data, CColors::Colors color = CColors::COLOR_END);
@@ -230,9 +230,9 @@ public:
 
 protected:
 	afx_msg void OnClose();
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
 	afx_msg void OnSysColorChange();
-	virtual ULONG GetGestureStatus(CPoint ptTouch) override;
+	ULONG GetGestureStatus(CPoint ptTouch) override;
 };
 
 class ProgressCommand
@@ -241,15 +241,11 @@ protected:
 	CTGitPathList		m_targetPathList;
 
 public:
-	PostCmdCallback	m_PostCmdCallback;
-
-	ProgressCommand()
-	: m_PostCmdCallback(nullptr)
-	{}
+	PostCmdCallback	m_PostCmdCallback = nullptr;
 
 	void SetPathList(const CTGitPathList& pathList) { m_targetPathList = pathList; }
 	virtual bool Run(CGitProgressList* list, CString& sWindowTitle, int& m_itemCountTotal, int& m_itemCount) = 0;
 	virtual bool ShowInfo(CString& /*info*/) { return false; }
-	virtual ~ProgressCommand() {}
+	virtual ~ProgressCommand() = default;
 };
 

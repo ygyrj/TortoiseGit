@@ -147,17 +147,15 @@ class CRibbonCmdUI : public CCmdUI
 {
 public:
 	CString m_Text;
-	BOOL m_bOn;
-	int m_nCheck;
-	int m_bCheckChanged;
+	BOOL m_bOn = FALSE;
+	int m_nCheck = 0;
+	int m_bCheckChanged = FALSE;
 
 	CRibbonCmdUI(int commandId)
-		: m_bOn(FALSE)
-		, m_nCheck(0)
-		, m_bCheckChanged(FALSE)
 	{
 		m_nID = commandId;
 	}
+	virtual ~CRibbonCmdUI() = default;
 
 	virtual void Enable(BOOL bOn)
 	{
@@ -385,19 +383,19 @@ int CNativeRibbonApp::GetRibbonHeight()
 class UIDynamicCommandItem : public IUISimplePropertySet
 {
 private:
-	ULONG m_RefCount;
+	ULONG m_RefCount = 0;
 	CString m_Label;
 	int m_CommandId;
 	CComPtr<IUIImage> m_Image;
 
 public:
 	class UIDynamicCommandItem(int commandId, LPCWSTR label, IUIImage* image)
-		: m_RefCount(0)
-		, m_Label(label)
+		: m_Label(label)
 		, m_CommandId(commandId)
 		, m_Image(image)
 	{
 	}
+	virtual ~UIDynamicCommandItem() = default;
 
 	STDMETHOD(QueryInterface)(REFIID riid, void** ppvObject)
 	{

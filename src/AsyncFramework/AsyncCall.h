@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
  *   Copyright (C) 2009, 2012 by Stefan Fuhrmann                           *
  *   stefanfuhrmann@alice-dsl.de                                           *
  *                                                                         *
@@ -50,7 +50,7 @@ private:
     {
     public:
 
-        virtual ~ICall() {};
+        virtual ~ICall() {}
         virtual void Execute() = 0;
     };
 

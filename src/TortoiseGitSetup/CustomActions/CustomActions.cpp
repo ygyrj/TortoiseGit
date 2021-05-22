@@ -25,7 +25,7 @@
 
 #include "stdafx.h"
 #include "resource.h"
-#include <shlwapi.h>
+#include <Shlwapi.h>
 #include <shellapi.h>
 #pragma comment(lib, "shlwapi")
 #pragma comment(lib, "shell32")

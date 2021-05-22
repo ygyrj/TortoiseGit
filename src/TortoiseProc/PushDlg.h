@@ -70,9 +70,9 @@ protected:
 	BOOL			m_bSetPushRemote;
 	BOOL			m_bSetPushBranch;
 
-	virtual BOOL OnInitDialog() override;
+	BOOL OnInitDialog() override;
 
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
 
@@ -88,7 +88,7 @@ protected:
 	afx_msg void OnBnClickedTags();
 	afx_msg void OnBnClickedProcPushSetUpstream();
 	afx_msg void OnBnClickedProcPushSetPushremote();
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
 	void Refresh();
 	void GetRemoteBranch(CString currentBranch);
 	void EnDisablePushRemoteArchiveBranch();

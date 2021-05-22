@@ -1121,7 +1121,7 @@ static void setFlagOnFileInIndex(CAutoIndex& gitindex, const CString& filename, 
 {
 	size_t idx = SIZE_T_MAX;
 	EXPECT_TRUE(git_index_find(&idx, gitindex, CUnicodeUtils::GetUTF8(filename)) == 0);
-	git_index_entry *e = const_cast<git_index_entry *>(git_index_get_byindex(gitindex, idx));
+	auto e = const_cast<git_index_entry *>(git_index_get_byindex(gitindex, idx));
 	ASSERT_TRUE(e);
 	if (assumevalid == BST_UNCHECKED)
 		e->flags &= ~GIT_INDEX_ENTRY_VALID;

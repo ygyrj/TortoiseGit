@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // External Cache Copyright (C) 2005-2008, 2012 - TortoiseSVN
 
@@ -19,7 +19,6 @@
 #pragma once
 #include "TGitPath.h"
 #include "FolderCrawler.h"
-#include "ShellCache.h"
 #include "SmartHandle.h"
 
 #define READ_DIR_CHANGE_BUFFER_SIZE 4096

@@ -21,6 +21,7 @@
 #include "stdafx.h"
 #include <ShellAPI.h>
 #include "TGITCache.h"
+#include "ShellCache.h"
 #include "GitStatusCache.h"
 #include "CacheInterface.h"
 #include "Resource.h"

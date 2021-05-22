@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2013-2017 - TortoiseGit
 
@@ -38,17 +38,17 @@ public:
 	enum { IDD = IDD_SETTINGSDIALOGS3 };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
 
-	virtual BOOL OnInitDialog() override;
-	virtual BOOL OnApply() override;
+	BOOL OnInitDialog() override;
+	BOOL OnApply() override;
 
-	virtual void LoadDataImpl(CAutoConfig& config) override;
-	virtual BOOL SafeDataImpl(CAutoConfig& config) override;
-	virtual void EnDisableControls() override;
-	virtual HWND GetDialogHwnd() const override { return GetSafeHwnd(); }
+	void LoadDataImpl(CAutoConfig& config) override;
+	BOOL SafeDataImpl(CAutoConfig& config) override;
+	void EnDisableControls() override;
+	HWND GetDialogHwnd() const override { return GetSafeHwnd(); }
 
 	afx_msg void OnChange();
 	afx_msg void OnBnClickedIconfileBrowse();

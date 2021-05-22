@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2011, 2013, 2016, 2017 - TortoiseGit
 // Copyright (C) 2003-2007 - TortoiseSVN
@@ -39,15 +39,15 @@ public:
 	enum { IDD = IDD_ADD };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	afx_msg void OnBnClickedSelectall();
 	afx_msg LRESULT OnFileDropped(WPARAM, LPARAM lParam);
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	afx_msg void OnBnClickedIncludeIgnored();
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
-	virtual BOOL OnInitDialog() override;
-	virtual void OnOK() override;
-	virtual void OnCancel() override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
+	BOOL OnInitDialog() override;
+	void OnOK() override;
+	void OnCancel() override;
 	void Refresh();
 
 private:

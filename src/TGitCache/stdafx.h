@@ -38,6 +38,8 @@ using namespace ATL;
 #include <deque>
 #include <functional>
 
+#include "SmartHandle.h"
+
 #include "git2.h"
 #include "SmartLibgit2Ref.h"
 

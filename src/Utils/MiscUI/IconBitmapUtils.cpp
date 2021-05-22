@@ -19,7 +19,6 @@
 //
 #include "stdafx.h"
 #include "IconBitmapUtils.h"
-#include "registry.h"
 #include "LoadIconEx.h"
 
 #pragma comment(lib, "UxTheme.lib")

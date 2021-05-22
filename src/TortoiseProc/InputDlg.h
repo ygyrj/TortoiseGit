@@ -32,17 +32,17 @@ class CInputDlg : public CResizableStandAloneDialog
 
 public:
 	CInputDlg(CWnd* pParent = nullptr);
-	virtual ~CInputDlg();
+	~CInputDlg() override;
 
 	enum { IDD = IDD_INPUTDLG };
 
 protected:
 	CFont			m_logFont;
 
-	virtual void DoDataExchange(CDataExchange* pDX) override;
-	virtual BOOL OnInitDialog() override;
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
-	virtual void OnOK() override;
+	void DoDataExchange(CDataExchange* pDX) override;
+	BOOL OnInitDialog() override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
+	void OnOK() override;
 
 	afx_msg void OnEnChangeLogmessage();
 	DECLARE_MESSAGE_MAP()

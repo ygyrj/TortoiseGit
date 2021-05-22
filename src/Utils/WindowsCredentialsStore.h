@@ -22,7 +22,6 @@
 class CCredentials;
 
 class CWindowsCredentialsStore {
-private:
 	CWindowsCredentialsStore() = delete;
 
 public:

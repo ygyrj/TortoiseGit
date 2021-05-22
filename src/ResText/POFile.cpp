@@ -20,12 +20,10 @@
 #include <Shlwapi.h>
 #include <fstream>
 #include "codecvt.h"
-#include "Utils.h"
 #include "ResModule.h"
 #include "POFile.h"
 
 #include <algorithm>
-#include <cctype>
 #include <memory>
 #include <functional>
 

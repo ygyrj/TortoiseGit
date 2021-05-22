@@ -35,8 +35,8 @@ public:
 	enum { IDD = IDD_CREATECHANGELIST };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	virtual BOOL OnInitDialog() override;
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	BOOL OnInitDialog() override;
 	afx_msg void OnEnChangeName();
 
 	DECLARE_MESSAGE_MAP()

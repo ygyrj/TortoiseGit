@@ -18,8 +18,6 @@
 //
 
 #include "stdafx.h"
-#define NEED_SIGNING_KEY
-#include "../version.h"
 #include "StringUtils.h"
 #include "UpdateCrypto.h"
 

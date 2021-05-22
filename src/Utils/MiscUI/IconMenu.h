@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2010, 2013 - TortoiseGit
 // Copyright (C) 2008-2009, 2011 - TortoiseSVN
@@ -33,14 +33,14 @@ class CIconMenu : public CMenu
 {
 public:
 	CIconMenu();
-	~CIconMenu();
+	~CIconMenu() override;
 
 	BOOL CreateMenu();
 	BOOL CreatePopupMenu();
 	BOOL AppendMenuIcon(UINT_PTR nIDNewItem, LPCWSTR lpszNewItem, UINT uIcon = 0, HMENU hsubmenu = nullptr);
 	BOOL AppendMenuIcon(UINT_PTR nIDNewItem, UINT_PTR nNewItem, UINT uIcon = 0, HMENU hsubmenu = nullptr);
-	void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
-	void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
+	void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct) override;
+	void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct) override;
 
 	BOOL SetMenuItemData(UINT_PTR nIDNewItem, LONG_PTR data);
 	LONG_PTR GetMenuItemData(UINT_PTR nIDNewItem);

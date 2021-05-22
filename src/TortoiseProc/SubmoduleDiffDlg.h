@@ -28,7 +28,7 @@ class CSubmoduleDiffDlg : public CHorizontalResizableStandAloneDialog
 
 public:
 	CSubmoduleDiffDlg(CWnd* pParent = nullptr);
-	virtual ~CSubmoduleDiffDlg();
+	~CSubmoduleDiffDlg() override;
 
 	enum { IDD = IDD_DIFFSUBMODULE };
 
@@ -39,10 +39,10 @@ public:
 	static HBRUSH GetChangeTypeBrush(CDC* pDC, const CGitDiff::ChangeType& changeType);
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
-	virtual BOOL OnInitDialog() override;
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	BOOL OnInitDialog() override;
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
 
 	afx_msg void OnBnClickedLog();
 	afx_msg void OnBnClickedLog2();

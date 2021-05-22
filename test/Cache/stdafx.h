@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include <SDKDDKVer.h>
+#include <sdkddkver.h>
 
 #define NOMINMAX
 #include <algorithm>
@@ -42,6 +42,8 @@ using namespace ATL;
 #include <map>
 #include <deque>
 #include <functional>
+
+#include "SmartHandle.h"
 
 #include "git2.h"
 #include "SmartLibgit2Ref.h"

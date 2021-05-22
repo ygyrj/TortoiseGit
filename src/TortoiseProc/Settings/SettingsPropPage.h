@@ -62,14 +62,14 @@ public:
 	virtual SettingsRestart GetRestart() const { return m_restart; }
 
 protected:
-	virtual BOOL OnInitDialog() override
+	BOOL OnInitDialog() override
 	{
 		CPropertyPage::OnInitDialog();
 		m_tooltips.Create(this);
 		CTheme::Instance().SetThemeForDialog(GetSafeHwnd(), CTheme::Instance().IsDarkTheme());
 		return FALSE;
 	}
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override
+	BOOL PreTranslateMessage(MSG* pMsg) override
 	{
 		m_tooltips.RelayEvent(pMsg, this);
 		return CPropertyPage::PreTranslateMessage(pMsg);

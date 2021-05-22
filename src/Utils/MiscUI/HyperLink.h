@@ -27,7 +27,7 @@ class CHyperLink : public CStatic
 {
 public:
 	CHyperLink();
-	virtual ~CHyperLink();
+	~CHyperLink() override;
 
 public:
 	enum UnderLineOptions
@@ -49,10 +49,10 @@ public:
 	int			GetUnderline() const;
 
 public:
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
-	virtual BOOL DestroyWindow() override;
-protected:
-	virtual void PreSubclassWindow() override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
+	BOOL DestroyWindow() override;
+
+	void PreSubclassWindow() override;
 
 protected:
 	HINSTANCE	GotoURL(LPCWSTR url);

@@ -64,9 +64,9 @@ public:
 
 protected:
 	// CSciEditContextMenuInterface
-	virtual void		InsertMenuItems(CMenu& mPopup, int& nCmd) override;
-	virtual bool		HandleMenuItemClick(int cmd, CSciEdit* pSciEdit) override;
-	virtual void		HandleSnippet(int type, const CString& text, CSciEdit* pSciEdit) override;
+	void		InsertMenuItems(CMenu& mPopup, int& nCmd) override;
+	bool		HandleMenuItemClick(int cmd, CSciEdit* pSciEdit) override;
+	void		HandleSnippet(int type, const CString& text, CSciEdit* pSciEdit) override;
 
 public:
 	void ShowViewPatchText(bool b=true)
@@ -104,13 +104,13 @@ private:
 	enum { IDD = IDD_COMMITDLG };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override; // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override; // DDX/DDV support
 
-	virtual BOOL OnInitDialog() override;
-	virtual void OnOK() override;
-	virtual void OnCancel() override;
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
-	virtual LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
+	BOOL OnInitDialog() override;
+	void OnOK() override;
+	void OnCancel() override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
+	LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
 	afx_msg void OnBnClickedShowunversioned();
 	afx_msg void OnBnClickedHistory();
 	afx_msg void OnBnClickedBugtraqbutton();

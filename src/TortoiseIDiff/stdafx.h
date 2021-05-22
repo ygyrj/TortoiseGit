@@ -33,6 +33,8 @@ using std::min;
 #include <malloc.h>
 #include <memory.h>
 #include <comdef.h>
+#include <vector>
+#include <memory>
 
 #include "MyMemDC.h"
 

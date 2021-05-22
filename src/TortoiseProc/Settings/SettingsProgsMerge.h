@@ -39,12 +39,12 @@ public:
 	enum { IDD = IDD_SETTINGSPROGSMERGE };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
 public:
-	virtual BOOL OnInitDialog() override;
-	virtual BOOL OnApply() override;
+	BOOL OnInitDialog() override;
+	BOOL OnApply() override;
 	afx_msg void OnBnClickedExtmergeOff();
 	afx_msg void OnBnClickedExtmergeOn();
 	afx_msg void OnBnClickedExtmergebrowse();

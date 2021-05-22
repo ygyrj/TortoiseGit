@@ -19,14 +19,6 @@
 #include "stdafx.h"
 #include "SysInfo.h"
 
-SysInfo::SysInfo()
-{
-}
-
-SysInfo::~SysInfo()
-{
-}
-
 const SysInfo& SysInfo::Instance()
 {
 	static SysInfo instance;

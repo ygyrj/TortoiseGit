@@ -22,7 +22,7 @@
 #include <CommCtrl.h>
 #include "PicWindow.h"
 #include <math.h>
-#include <memory>
+#include "resource.h"
 #include "../Utils/DPIAware.h"
 #include "../Utils/LoadIconEx.h"
 #include "../Utils/Theme.h"

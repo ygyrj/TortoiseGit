@@ -39,10 +39,10 @@ public:
 	std::vector<GitRevLoglist> m_RevCache;
 
 protected:
-	virtual void OnNMDblclkLoglist(NMHDR* /*pNMHDR*/, LRESULT* pResult) override;
-	virtual void OnLvnGetdispinfoLoglist(NMHDR* pNMHDR, LRESULT* pResult) override;
-	virtual void OnNMCustomdrawLoglist(NMHDR* pNMHDR, LRESULT* pResult) override;
-	virtual BOOL OnToolTipText(UINT id, NMHDR* pNMHDR, LRESULT* pResult) override;
+	void OnNMDblclkLoglist(NMHDR* /*pNMHDR*/, LRESULT* pResult) override;
+	void OnLvnGetdispinfoLoglist(NMHDR* pNMHDR, LRESULT* pResult) override;
+	void OnNMCustomdrawLoglist(NMHDR* pNMHDR, LRESULT* pResult) override;
+	BOOL OnToolTipText(UINT id, NMHDR* pNMHDR, LRESULT* pResult) override;
 
 	void CopySelectionToClipBoard(int toCopy = ID_COPYCLIPBOARDFULL) override;
 };

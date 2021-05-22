@@ -38,7 +38,7 @@ public:
 public:
 
 	CGitProgressDlg(CWnd* pParent = nullptr);
-	virtual ~CGitProgressDlg();
+	~CGitProgressDlg() override;
 
 
 	void SetCommand(ProgressCommand* cmd) { m_ProgList.SetCommand(cmd); }
@@ -58,10 +58,10 @@ public:
 
 protected:
 
-	virtual BOOL						OnInitDialog() override;
-	virtual void						OnCancel() override;
-	virtual BOOL						PreTranslateMessage(MSG* pMsg) override;
-	virtual void						DoDataExchange(CDataExchange* pDX) override;
+	BOOL						OnInitDialog() override;
+	void						OnCancel() override;
+	BOOL						PreTranslateMessage(MSG* pMsg) override;
+	void						DoDataExchange(CDataExchange* pDX) override;
 
 	afx_msg void	OnBnClickedLogbutton();
 	afx_msg BOOL	OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message);
@@ -76,7 +76,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 private:
-	virtual void OnOK() override;
+	void OnOK() override;
 
 	CAnimateCtrl			m_Animate;
 	CProgressCtrl			m_ProgCtrl;
@@ -96,5 +96,5 @@ private:
 	} ACCELLERATOR;
 	std::map<wchar_t, ACCELLERATOR>	m_accellerators;
 	HACCEL							m_hAccel;
-	virtual LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
+	LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
 };

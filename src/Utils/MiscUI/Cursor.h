@@ -49,17 +49,11 @@ public:
 	CCursor(LPCWSTR CursorName)
 	{
 		ASSERT(this);
-		m_bInitialized = FALSE;
-		m_hOldCursor = nullptr;
 		SetCursor(CursorName);
 	}
 
-	CCursor()
-	{
-		ASSERT(this);
-		m_bInitialized = FALSE;
-		m_hOldCursor = nullptr;
-	}
+	CCursor() = default;
+
 	~CCursor()
 	{
 		ASSERT(this);
@@ -106,6 +100,6 @@ public:
 	}
 
 private:
-	HCURSOR m_hOldCursor;
-	BOOL m_bInitialized;
+	HCURSOR m_hOldCursor = nullptr;
+	BOOL m_bInitialized = FALSE;
 };

@@ -36,14 +36,14 @@ public:
 	enum { IDD = IDD_SETTINGIT_CONFIG };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
-	virtual BOOL OnInitDialog() override;
-	virtual BOOL OnApply() override;
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	BOOL OnInitDialog() override;
+	BOOL OnApply() override;
 
-	virtual void LoadDataImpl(CAutoConfig& config) override;
-	virtual BOOL SafeDataImpl(CAutoConfig& config) override;
-	virtual void EnDisableControls() override;
-	virtual HWND GetDialogHwnd() const override { return GetSafeHwnd(); }
+	void LoadDataImpl(CAutoConfig& config) override;
+	BOOL SafeDataImpl(CAutoConfig& config) override;
+	void EnDisableControls() override;
+	HWND GetDialogHwnd() const override { return GetSafeHwnd(); }
 
 	DECLARE_MESSAGE_MAP()
 

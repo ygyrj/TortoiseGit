@@ -35,7 +35,7 @@ public:
 	enum { IDD = IDD_USER_PASSWD };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
 public:
@@ -43,7 +43,7 @@ public:
 	CString m_URL;
 	wchar_t m_password[MAX_LENGTH_PASSWORD];
 	char m_passwordA[4 * MAX_LENGTH_PASSWORD];
-	virtual BOOL OnInitDialog() override;
+	BOOL OnInitDialog() override;
 	afx_msg void OnBnClickedOk();
 	afx_msg void OnDestroy();
 };

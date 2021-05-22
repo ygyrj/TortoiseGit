@@ -23,9 +23,7 @@ class CControlsBridge {
 public:
 	static void AlignHorizontally(CWnd* parent, int labelId, int controlId);
 
-private:
-	CControlsBridge();
-	~CControlsBridge();
+	CControlsBridge() = delete;
 };
 
 inline void CControlsBridge::AlignHorizontally(CWnd* parent, int labelId, int controlId)

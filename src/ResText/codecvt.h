@@ -1,4 +1,4 @@
-
+﻿
 /** Several code conversions facets.
 
 	E.g. this is how to convert UCS-2 to UTF-8
@@ -27,14 +27,14 @@ protected:
 
 	result do_in(std::mbstate_t& state,
 				 const char* from, const char* from_end, const char*& from_next,
-				 wchar_t* to, wchar_t* to_limit, wchar_t*& to_next) const;
+				 wchar_t* to, wchar_t* to_limit, wchar_t*& to_next) const override;
 
 	result do_out(std::mbstate_t& state,
 				  const wchar_t* from, const wchar_t* from_end, const wchar_t*& from_next,
-				  char* to, char* to_limit, char*& to_next) const;
+				  char* to, char* to_limit, char*& to_next) const override;
 
-	bool do_always_noconv() const throw() { return false; }
-	int  do_encoding() const throw() { return 2; }
+	bool do_always_noconv() const noexcept override { return false; }
+	int do_encoding() const noexcept override { return 2; }
 };
 
 
@@ -46,12 +46,12 @@ protected:
 
 	result do_in(std::mbstate_t& state,
 				 const char* from, const char* from_end, const char*& from_next,
-				 wchar_t* to, wchar_t* to_limit, wchar_t*& to_next) const;
+				 wchar_t* to, wchar_t* to_limit, wchar_t*& to_next) const override;
 
 	result do_out(std::mbstate_t& state,
 				  const wchar_t* from, const wchar_t* from_end, const wchar_t*& from_next,
-				  char* to, char* to_limit, char*& to_next) const;
+				  char* to, char* to_limit, char*& to_next) const override;
 
-	bool do_always_noconv() const throw() { return false; }
-	int  do_encoding() const throw() { return 2; }
+	bool do_always_noconv() const noexcept override { return false; }
+	int do_encoding() const noexcept override { return 2; }
 };

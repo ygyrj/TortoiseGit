@@ -65,10 +65,10 @@ public:
 	};
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override; // DDX/DDV support
-	virtual BOOL OnInitDialog() override;
+	void DoDataExchange(CDataExchange* pDX) override; // DDX/DDV support
+	BOOL OnInitDialog() override;
 	DECLARE_MESSAGE_MAP()
-	virtual LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
+	LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	afx_msg LRESULT OnRebaseUpdateUI(WPARAM wParam, LPARAM lParam);
 	void SetTheme(bool bDark) override;
@@ -87,7 +87,7 @@ protected:
 	CRect m_CommitListOrigRect;
 	CString m_sStatusText;
 	bool m_bStatusWarning;
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
 	bool LogListHasFocus(HWND hwnd);
 	bool LogListHasMenuItem(int i);
 
@@ -129,10 +129,7 @@ protected:
 		CTime time;
 		bool set = false;
 
-		SquashFirstMetaData()
-			: set(false)
-		{
-		}
+		SquashFirstMetaData() = default;
 
 		SquashFirstMetaData(GitRev* rev)
 			: set(true)

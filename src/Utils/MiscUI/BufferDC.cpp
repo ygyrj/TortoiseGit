@@ -38,8 +38,6 @@ CBufferDC::CBufferDC(CWnd* pWnd) : CPaintDC(pWnd)
 		m_ClientRect.top = 0;
 		m_ClientRect.bottom = 0;
 	}
-
-	m_bBoundsUpdated = FALSE;
 }
 
 CBufferDC::~CBufferDC()
@@ -55,7 +53,7 @@ CBufferDC::~CBufferDC()
 	::DeleteDC(m_hMemoryDC);
 }
 
-void CBufferDC::Flush()
+void CBufferDC::Flush() const
 {
 	::BitBlt(
 		m_hOutputDC,
@@ -120,7 +118,7 @@ UINT CBufferDC::SetBoundsRect( LPCRECT lpRectBounds, UINT flags )
 	return CPaintDC::SetBoundsRect(lpRectBounds, flags);
 }
 
-BOOL CBufferDC::RestoreDC( int nSavedDC )
+BOOL CBufferDC::RestoreDC(int nSavedDC)
 {
 	BOOL ret = CPaintDC::RestoreDC(nSavedDC);
 

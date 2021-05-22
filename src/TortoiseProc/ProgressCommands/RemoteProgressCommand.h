@@ -34,7 +34,7 @@ protected:
 	{
 	public:
 		RefUpdateNotificationData(const char* refname, const git_oid* oldOid, const git_oid* newOid, const CString& change);
-		virtual void GetContextMenu(CIconMenu& popup, CGitProgressList::ContextMenuActionList& actions) override;
+		void GetContextMenu(CIconMenu& popup, CGitProgressList::ContextMenuActionList& actions) override;
 	protected:
 		CGitHash	m_OldHash;
 		CGitHash	m_NewHash;
@@ -52,8 +52,8 @@ class CSmartAnimation
 
 public:
 	CSmartAnimation(CAnimateCtrl* pAnimate)
+		: m_pAnimate(pAnimate)
 	{
-		m_pAnimate = pAnimate;
 		if (m_pAnimate)
 		{
 			m_pAnimate->ShowWindow(SW_SHOW);

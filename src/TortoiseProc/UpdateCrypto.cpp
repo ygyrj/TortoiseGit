@@ -23,7 +23,6 @@
 //
 #include "stdafx.h"
 #include "UpdateCrypto.h"
-#include "FormatMessageWrapper.h"
 #include <atlenc.h>
 #define NEED_SIGNING_KEY
 #include "../version.h"

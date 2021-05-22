@@ -40,12 +40,12 @@ public:
 	enum { IDD = IDD_SETTINGSMAIN };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
 
-	virtual BOOL OnInitDialog() override;
-	virtual BOOL OnApply() override;
+	BOOL OnInitDialog() override;
+	BOOL OnApply() override;
 	afx_msg void OnModified();
 	afx_msg void OnClickVersioncheck();
 	afx_msg void OnMsysGitPathModify();

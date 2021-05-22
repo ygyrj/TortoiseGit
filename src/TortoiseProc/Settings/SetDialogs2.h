@@ -39,12 +39,12 @@ public:
 	enum { IDD = IDD_SETTINGSDIALOGS2 };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
 
-	virtual BOOL OnInitDialog() override;
-	virtual BOOL OnApply() override;
+	BOOL OnInitDialog() override;
+	BOOL OnApply() override;
 	afx_msg void OnChange();
 	afx_msg void OnCbnSelchangeAutoclosecombo();
 

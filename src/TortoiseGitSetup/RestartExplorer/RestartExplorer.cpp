@@ -21,7 +21,6 @@
 //
 
 #include "stdafx.h"
-#include "resource.h"
 #include "CreateProcessHelper.h"
 #include <ShlObj.h>
 #include "scope_exit_noexcept.h"

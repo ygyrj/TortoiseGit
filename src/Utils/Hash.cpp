@@ -22,6 +22,7 @@
 #include "Hash.h"
 #include <vector>
 #include <sstream>
+#include <wincrypt.h>
 
 std::wstring GetHashText(const void* data, const size_t data_size, HashType hashType)
 {

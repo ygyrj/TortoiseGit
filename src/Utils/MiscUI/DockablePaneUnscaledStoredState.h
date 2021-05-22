@@ -23,6 +23,6 @@
 class CDockablePaneUnscaledStoredState : public CDockablePane
 {
 public:
-	virtual BOOL LoadState(LPCWSTR lpszProfileName = NULL, int nIndex = -1, UINT uiID = (UINT)-1) override;
-	virtual BOOL SaveState(LPCWSTR lpszProfileName = NULL, int nIndex = -1, UINT uiID = (UINT)-1) override;
+	BOOL LoadState(LPCWSTR lpszProfileName = NULL, int nIndex = -1, UINT uiID = (UINT)-1) override;
+	BOOL SaveState(LPCWSTR lpszProfileName = NULL, int nIndex = -1, UINT uiID = (UINT)-1) override;
 };

@@ -28,7 +28,7 @@ extern CGitAdminDirMap g_AdminDirMap; // not optimal yet
 class GitIndexCBasicGitFixture : public CBasicGitFixture
 {
 protected:
-	virtual void SetUp()
+	void SetUp() override
 	{
 		CBasicGitFixture::SetUp();
 		g_AdminDirMap.clear();
@@ -38,7 +38,7 @@ protected:
 class GitIndexCBasicGitWithTestRepoFixture : public CBasicGitWithTestRepoFixture
 {
 protected:
-	virtual void SetUp()
+	void SetUp() override
 	{
 		CBasicGitWithTestRepoFixture::SetUp();
 		g_AdminDirMap.clear();
@@ -48,7 +48,7 @@ protected:
 class CBasicGitWithMultiLinkedTestWithSubmoduleRepoFixture : public CBasicGitWithTestRepoCreatorFixture
 {
 protected:
-	virtual void SetUp()
+	void SetUp() override
 	{
 		CBasicGitWithTestRepoCreatorFixture::SetUp();
 

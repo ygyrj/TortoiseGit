@@ -36,7 +36,7 @@
 
 static int CalculateDiffSimilarityIndexThreshold(DWORD index)
 {
-	if (index < 0 || index > 100)
+	if (index > 100)
 		return 50;
 	return index;
 }
@@ -482,7 +482,7 @@ class CGitCall_ByteVector : public CGitCall
 {
 public:
 	CGitCall_ByteVector(CString cmd,BYTE_VECTOR* pvector, BYTE_VECTOR* pvectorErr = nullptr) : CGitCall(cmd),m_pvector(pvector), m_pvectorErr(pvectorErr) {}
-	virtual bool OnOutputData(const BYTE* data, size_t size) override
+	bool OnOutputData(const BYTE* data, size_t size) override
 	{
 		if (!m_pvector || size == 0)
 			return false;
@@ -491,7 +491,7 @@ public:
 		memcpy(&*(m_pvector->begin()+oldsize),data,size);
 		return false;
 	}
-	virtual bool OnOutputErrData(const BYTE* data, size_t size) override
+	bool OnOutputErrData(const BYTE* data, size_t size) override
 	{
 		if (!m_pvectorErr || size == 0)
 			return false;
@@ -552,7 +552,7 @@ public:
 	, m_pvectorErr(pvectorErr)
 	{}
 
-	virtual bool OnOutputData(const BYTE* data, size_t size) override
+	bool OnOutputData(const BYTE* data, size_t size) override
 	{
 		// Add data
 		if (size == 0)
@@ -576,7 +576,7 @@ public:
 		return false;
 	}
 
-	virtual bool OnOutputErrData(const BYTE* data, size_t size) override
+	bool OnOutputErrData(const BYTE* data, size_t size) override
 	{
 		if (!m_pvectorErr || size == 0)
 			return false;
@@ -586,7 +586,7 @@ public:
 		return false;
 	}
 
-	virtual void OnEnd() override
+	void OnEnd() override
 	{
 		if (!m_buffer.IsEmpty())
 			m_recv(m_buffer);
@@ -3473,7 +3473,7 @@ int CGit::GetGitVersion(CString* versiondebug, CString* errStr)
 	return ver;
 }
 
-int CGit::GetGitNotes(const CGitHash& hash, CString& notes)
+int CGit::GetGitNotes(const CGitHash& hash, CString& notes) const
 {
 	CAutoRepository repo(GetGitRepository());
 	if (!repo)
@@ -3511,7 +3511,6 @@ int CGit::SetGitNotes(const CGitHash& hash, const CString& notes)
 
 CGitHash CGit::GetSubmodulePointer()
 {
-	CGitHash hash;
 	if (GitAdminDir::IsBareRepo(g_Git.m_CurrentDir))
 		return {};
 	CString superprojectRoot;

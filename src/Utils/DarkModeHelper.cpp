@@ -21,7 +21,6 @@
 #include "DarkModeHelper.h"
 #include "StringUtils.h"
 #include "PathUtils.h"
-#include <vector>
 #include <Shlobj.h>
 
 DarkModeHelper& DarkModeHelper::Instance()

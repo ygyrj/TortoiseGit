@@ -25,6 +25,7 @@
 #include <afxtaskdialog.h>
 #include "DPIAware.h"
 #include "LoadIconEx.h"
+#include "dlgtemplate.h"
 
 #define BTN_OFFSET 100 // use an offset in order to not interfere with IDYES and so on...
 

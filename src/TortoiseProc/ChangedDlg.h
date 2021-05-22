@@ -41,11 +41,11 @@ public:
 	enum { IDD = IDD_CHANGEDFILES };
 
 protected:
-	virtual void			DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
-	virtual BOOL			OnInitDialog() override;
-	virtual void			OnOK() override;
-	virtual void			OnCancel() override;
-	virtual BOOL			PreTranslateMessage(MSG* pMsg) override;
+	void			DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	BOOL			OnInitDialog() override;
+	void			OnOK() override;
+	void			OnCancel() override;
+	BOOL			PreTranslateMessage(MSG* pMsg) override;
 	afx_msg void			OnBnClickedRefresh();
 	afx_msg void			OnBnClickedCommit();
 	afx_msg void			OnBnClickedStash();

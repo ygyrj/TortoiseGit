@@ -27,7 +27,7 @@ class CPatchListCtrl : public CListCtrl
 
 public:
 	CPatchListCtrl();
-	virtual ~CPatchListCtrl();
+	~CPatchListCtrl() override;
 	DWORD m_ContextMenuMask;
 	enum
 	{

@@ -95,9 +95,9 @@ public:
 	}
 protected:
 	//implement the virtual methods from Git base class
-	virtual bool Validate(LPCWSTR string) override;
+	bool Validate(LPCWSTR string) override;
 
-	virtual void DoDataExchange(CDataExchange* pDX) override; // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override; // DDX/DDV support
 
 	afx_msg LRESULT	OnTaskbarBtnCreated(WPARAM wParam, LPARAM lParam);
 	CComPtr<ITaskbarList3>	m_pTaskbarList;
@@ -152,10 +152,10 @@ protected:
 	afx_msg void OnEnscrollMsgview();
 	afx_msg LRESULT OnResetWcRev(WPARAM, LPARAM);
 
-	virtual void OnCancel() override;
-	virtual void OnOK() override;
-	virtual BOOL OnInitDialog() override;
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
+	void OnCancel() override;
+	void OnOK() override;
+	BOOL OnInitDialog() override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	afx_msg void OnPaint();
 	afx_msg void OnSysColorChange();
@@ -208,7 +208,7 @@ private:
 	afx_msg void OnMoving(UINT fwSide, LPRECT pRect);
 	afx_msg void OnSizing(UINT fwSide, LPRECT pRect);
 
-	virtual LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
+	LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
 
 public:
 	CWnd *				m_pNotifyWindow;

@@ -65,12 +65,12 @@ public:
 			GIT_COMMAND_STASH
 		};
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	BRANCH_COMBOX_EVENT_HANDLE();
 
-	virtual BOOL OnInitDialog() override;
+	BOOL OnInitDialog() override;
 	afx_msg void OnBnClickedButtonManage();
-	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
+	BOOL PreTranslateMessage(MSG* pMsg) override;
 	afx_msg void OnCbnEditchangeComboboxex();
 	afx_msg void OnBnClickedButtonPull();
 	afx_msg void OnBnClickedButtonPush();
@@ -121,8 +121,8 @@ protected:
 
 	void				ParserCmdOutput(char ch);
 
-	virtual void LocalBranchChange() override { FetchOutList(); };
-	virtual void RemoteBranchChange() override {};
+	void LocalBranchChange() override { FetchOutList(); };
+	void RemoteBranchChange() override {};
 
 	void ShowTab(int windowid)
 	{
@@ -134,7 +134,7 @@ protected:
 
 	bool IsURL();
 
-	virtual void SetRemote(CString remote) override
+	void SetRemote(CString remote) override
 	{
 		if(!remote.IsEmpty())
 		{

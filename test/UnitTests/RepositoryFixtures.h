@@ -57,7 +57,7 @@ static void CopyRecursively(const CString& source, const CString& dest)
 class CBasicGitFixture : public ::testing::TestWithParam<config>
 {
 protected:
-	virtual void SetUp() override
+	void SetUp() override
 	{
 		switch (GetParam())
 		{
@@ -92,7 +92,7 @@ protected:
 		SetCurrentDirectory(m_Git.m_CurrentDir);
 	}
 
-	virtual void TearDown() override
+	void TearDown() override
 	{
 		SetCurrentDirectory(CPathUtils::GetAppDirectory());
 	}
@@ -129,7 +129,7 @@ protected:
 		EXPECT_TRUE(CStringUtils::WriteStringToTextFile(configFile, text));
 	}
 
-	virtual void SetUp() override
+	void SetUp() override
 	{
 		CBasicGitFixture::SetUp();
 	}
@@ -142,9 +142,9 @@ private:
 class CBasicGitWithTestRepoFixture : public CBasicGitWithTestRepoCreatorFixture
 {
 protected:
-	CBasicGitWithTestRepoFixture() : CBasicGitWithTestRepoCreatorFixture() {};
-	CBasicGitWithTestRepoFixture(const CString& arepo) : CBasicGitWithTestRepoCreatorFixture(arepo) {};
-	virtual void SetUp() override
+	CBasicGitWithTestRepoFixture() : CBasicGitWithTestRepoCreatorFixture() {}
+	CBasicGitWithTestRepoFixture(const CString& arepo) : CBasicGitWithTestRepoCreatorFixture(arepo) {}
+	void SetUp() override
 	{
 		CBasicGitWithTestRepoCreatorFixture::SetUp();
 		SetUpTestRepo(m_Dir.GetTempDir());
@@ -154,11 +154,11 @@ protected:
 class CBasicGitWithTestRepoBareFixture : public CBasicGitWithTestRepoFixture
 {
 public:
-	CBasicGitWithTestRepoBareFixture() : CBasicGitWithTestRepoFixture() {};
-	CBasicGitWithTestRepoBareFixture(const CString& arepo) : CBasicGitWithTestRepoFixture(arepo) {};
+	CBasicGitWithTestRepoBareFixture() : CBasicGitWithTestRepoFixture() {}
+	CBasicGitWithTestRepoBareFixture(const CString& arepo) : CBasicGitWithTestRepoFixture(arepo) {}
 
 protected:
-	virtual void SetUp() override
+	void SetUp() override
 	{
 		prefix.Empty();
 		CBasicGitWithTestRepoFixture::SetUp();
@@ -175,7 +175,7 @@ protected:
 class CBasicGitWithSubmoduleRepositoryFixture : public CBasicGitWithTestRepoFixture
 {
 public:
-	CBasicGitWithSubmoduleRepositoryFixture() : CBasicGitWithTestRepoFixture(L"git-submodules-repo") {};
+	CBasicGitWithSubmoduleRepositoryFixture() : CBasicGitWithTestRepoFixture(L"git-submodules-repo") {}
 };
 
 class CBasicGitWithSubmodulRepoeBareFixture : public CBasicGitWithTestRepoBareFixture
@@ -187,7 +187,7 @@ public:
 class CBasicGitWithEmptyRepositoryFixture : public CBasicGitFixture
 {
 protected:
-	virtual void SetUp() override
+	void SetUp() override
 	{
 		CBasicGitFixture::SetUp();
 		CString output;
@@ -208,7 +208,7 @@ protected:
 class CBasicGitWithEmptyBareRepositoryFixture : public CBasicGitFixture
 {
 protected:
-	virtual void SetUp() override
+	void SetUp() override
 	{
 		CBasicGitFixture::SetUp();
 		CString output;

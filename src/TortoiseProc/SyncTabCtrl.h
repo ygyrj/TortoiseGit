@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2016 - TortoiseGit
 
@@ -25,7 +25,7 @@ class CSyncTabCtrl : public CMFCTabCtrl
 
 public:
 	CSyncTabCtrl();
-	virtual ~CSyncTabCtrl();
+	~CSyncTabCtrl() override;
 
 protected:
 	DECLARE_MESSAGE_MAP()

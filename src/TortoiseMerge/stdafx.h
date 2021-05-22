@@ -52,6 +52,7 @@ using std::min;
 #include <map>
 #include <vector>
 #include <list>
+#include <memory>
 
 #pragma warning(push)
 #include "apr_general.h"

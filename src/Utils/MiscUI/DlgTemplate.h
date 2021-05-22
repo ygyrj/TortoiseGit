@@ -19,13 +19,8 @@
 class CDlgTemplate
 {
 public:
+	CDlgTemplate() = default;
 
-	CDlgTemplate()
-	{
-		usedBufferLength = 0;
-		totalBufferLength = 0;
-		dialogTemplate = 0;
-	};
 	CDlgTemplate(LPCWSTR caption, DWORD style, short x, short y, short w, short h,
 		LPCWSTR font = nullptr, LONG fontSize = 8)
 	{
@@ -248,8 +243,8 @@ protected:
 
 private:
 
-	DLGTEMPLATE* dialogTemplate;
+	DLGTEMPLATE* dialogTemplate = nullptr;
 
-	int totalBufferLength;
-	int usedBufferLength;
+	int totalBufferLength = 0;
+	int usedBufferLength = 0;
 };

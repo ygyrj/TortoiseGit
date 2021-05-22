@@ -26,6 +26,7 @@ public:
 	CommonDialogFunctions(BaseType* ctrl)
 	: m_ctrl(ctrl)
 	{}
+	virtual ~CommonDialogFunctions() = default;
 
 private:
 	BaseType* m_ctrl;

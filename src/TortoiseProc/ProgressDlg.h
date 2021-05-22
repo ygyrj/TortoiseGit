@@ -56,8 +56,8 @@ public:
 
 	PostCmd(UINT icon, CString label, PostCmdAction action)
 	: icon(icon)
-	, action(action)
 	, label(label)
+	, action(action)
 	{
 	}
 
@@ -80,10 +80,10 @@ class CProgressDlg : public CResizableStandAloneDialog
 	DECLARE_DYNAMIC(CProgressDlg)
 public:
 	CProgressDlg(CWnd* pParent = nullptr); // standard constructor
-	virtual ~CProgressDlg();
+	~CProgressDlg() override;
 
 private:
-	virtual BOOL OnInitDialog() override;
+	BOOL OnInitDialog() override;
 
 	// Dialog Data
 	enum { IDD = IDD_GITPROGRESS };
@@ -124,7 +124,7 @@ private:
 	bool					m_bDone;
 	ULONGLONG				m_startTick;
 
-	virtual void			DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void			DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	static UINT				ProgressThreadEntry(LPVOID pVoid);
 	UINT					ProgressThread();
 
@@ -138,7 +138,7 @@ private:
 	afx_msg LRESULT			OnTaskbarBtnCreated(WPARAM wParam, LPARAM lParam);
 	CComPtr<ITaskbarList3>	m_pTaskbarList;
 
-	void					OnCancel();
+	void					OnCancel() override;
 	afx_msg void			OnClose();
 
 	void					SetupLogMessageViewControl();
@@ -186,7 +186,7 @@ private:
 	} ACCELLERATOR;
 	std::map<wchar_t, ACCELLERATOR>	m_accellerators;
 	HACCEL							m_hAccel;
-	virtual LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
+	LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam) override;
 };
 
 class CCommitProgressDlg:public CProgressDlg
@@ -196,5 +196,5 @@ public:
 	{
 	}
 
-	virtual CString Convert2UnionCode(char* buff) override;
+	CString Convert2UnionCode(char* buff) override;
 };

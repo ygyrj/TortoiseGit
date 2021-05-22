@@ -23,6 +23,7 @@
 #include "registry.h"
 #include "LangDll.h"
 #include "TortoiseIDiff.h"
+#include "resource.h"
 #include "TaskbarUUID.h"
 #include "Monitor.h"
 #include <Shellapi.h>

@@ -34,13 +34,13 @@ public:
 	enum { IDD = IDD_RESOLVE_CONFLICT };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	afx_msg void OnBnClickedLog();
 	afx_msg void OnBnClickedLog2();
 	afx_msg void OnBnClickedDelete();
 	afx_msg void OnBnClickedModify();
 	afx_msg void OnBnClickedShowdiff();
-	virtual BOOL OnInitDialog() override;
+	BOOL OnInitDialog() override;
 	void ShowLog(CString hash);
 	DECLARE_MESSAGE_MAP()
 

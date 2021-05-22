@@ -27,12 +27,12 @@
 class CPropertiesToolBar : public CMFCToolBar
 {
 public:
-	virtual void OnUpdateCmdUI(CFrameWnd* /*pTarget*/, BOOL bDisableIfNoHndler) override
+	void OnUpdateCmdUI(CFrameWnd* /*pTarget*/, BOOL bDisableIfNoHndler) override
 	{
 		CMFCToolBar::OnUpdateCmdUI(static_cast<CFrameWnd*>(GetOwner()), bDisableIfNoHndler);
 	}
 
-	virtual BOOL AllowShowOnList() const override { return FALSE; }
+	BOOL AllowShowOnList() const override { return FALSE; }
 };
 
 class CPropertiesWnd : public CDockablePaneUnscaledStoredState
@@ -41,7 +41,7 @@ class CPropertiesWnd : public CDockablePaneUnscaledStoredState
 public:
 	CPropertiesWnd();
 
-	void AdjustLayout();
+	void AdjustLayout() override;
 
 // Attributes
 public:

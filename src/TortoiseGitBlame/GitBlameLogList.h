@@ -25,7 +25,7 @@ class CGitBlameLogList : public CGitLogListBase
 public:
 	void hideUnimplementedCommands();
 	void GetParentHashes(GitRevLoglist* pRev, GIT_REV_LIST& parentHash);
-	virtual void ContextMenuAction(int cmd, int FirstSelect, int LastSelect, CMenu* menu, const MAP_HASH_NAME& hashMap) override;
+	void ContextMenuAction(int cmd, int FirstSelect, int LastSelect, CMenu* menu, const MAP_HASH_NAME& hashMap) override;
 
 private:
 	void GetPaths(const CGitHash& hash, std::vector<CTGitPath>& paths);

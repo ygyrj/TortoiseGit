@@ -20,7 +20,6 @@
 #include "ProjectProperties.h"
 #include "CommonAppUtils.h"
 #include "Git.h"
-#include "UnicodeUtils.h"
 #include "TempFile.h"
 #include <WinInet.h>
 #include "SysInfo.h"

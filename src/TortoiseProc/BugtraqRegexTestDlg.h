@@ -39,8 +39,8 @@ public:
 	CString		m_sBugtraqRegex2;
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override; // DDX/DDV support
-	virtual BOOL OnInitDialog() override;
+	void DoDataExchange(CDataExchange* pDX) override; // DDX/DDV support
+	BOOL OnInitDialog() override;
 
 	DECLARE_MESSAGE_MAP()
 

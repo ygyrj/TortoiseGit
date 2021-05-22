@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2014 - TortoiseGit
 
@@ -22,13 +22,9 @@
 class SendMailProgressCommand : public ProgressCommand
 {
 private:
-	CSendMail *	m_SendMail;
+	CSendMail* m_SendMail = nullptr;
 
 public:
-	SendMailProgressCommand()
-	: m_SendMail(nullptr)
-	{}
-
 	void SetSendMailOption(CSendMail *sendmail) { m_SendMail = sendmail; }
-	virtual bool Run(CGitProgressList* list, CString& sWindowTitle, int& m_itemCountTotal, int& m_itemCount) override;
+	bool Run(CGitProgressList* list, CString& sWindowTitle, int& m_itemCountTotal, int& m_itemCount) override;
 };

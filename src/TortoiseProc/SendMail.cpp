@@ -35,10 +35,6 @@ CSendMail::CSendMail(const CString& To, const CString& CC, bool bAttachment)
 {
 }
 
-CSendMail::~CSendMail()
-{
-}
-
 int CSendMail::SendMail(const CTGitPath &item, CGitProgressList * instance, const CString& FromName, const CString& FromMail, const CString& To, const CString& CC, const CString &subject, const CString& body, CStringArray &attachments)
 {
 	ASSERT(instance);
@@ -144,10 +140,6 @@ CSendMailCombineable::CSendMailCombineable(const CString& To, const CString& CC,
 	: CSendMail(To, CC, bAttachment)
 	, m_sSubject(subject)
 	, m_bCombine(bCombine)
-{
-}
-
-CSendMailCombineable::~CSendMailCombineable()
 {
 }
 

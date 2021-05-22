@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2008-2017 - TortoiseGit
 
@@ -37,11 +37,11 @@ public:
 	enum { IDD = IDD_PULLFETCH };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 	CHistoryCombo	m_Remote;
 	CHistoryCombo	m_Other;
 	CHistoryCombo	m_RemoteBranch;
-	virtual BOOL OnInitDialog() override;
+	BOOL OnInitDialog() override;
 	CRegString	m_RemoteReg;
 	CRegDWORD	m_regRebase;
 	CRegDWORD	m_regFFonly;

@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2017 - TortoiseGit
 // Copyright (C) 2003-2006,2009-2010,2015,2017 - TortoiseSVN
@@ -35,7 +35,7 @@ class CSysImageList : public CImageList
 // Singleton constructor and destructor (private)
 private:
 	CSysImageList();
-	~CSysImageList();
+	~CSysImageList() override;
 	// prevent cloning
 	CSysImageList(const CSysImageList&) = delete;
 	CSysImageList& operator=(const CSysImageList&) = delete;

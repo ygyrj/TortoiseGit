@@ -51,11 +51,11 @@ public:
 	enum { IDD = IDD_FIND };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
-	virtual void OnCancel() override;
-	virtual void PostNcDestroy() override;
-	virtual void OnOK() override;
-	virtual BOOL OnInitDialog() override;
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void OnCancel() override;
+	void PostNcDestroy() override;
+	void OnOK() override;
+	BOOL OnInitDialog() override;
 	afx_msg void OnCbnEditchangeFindcombo();
 	afx_msg void OnNMClickListRef(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnEnChangeEditFilter();

@@ -23,7 +23,7 @@
 
 class RefBrowseCommand : public Command
 {
-	virtual bool Execute() override
+	bool Execute() override
 	{
 		if (!GitAdminDir::IsWorkingTreeOrBareRepo(g_Git.m_CurrentDir))
 		{

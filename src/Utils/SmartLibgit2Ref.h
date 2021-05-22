@@ -43,7 +43,7 @@ public:
 		return &m_Ref;
 	}
 
-	~CSmartBuffer()
+	virtual ~CSmartBuffer()
 	{
 		FreeFunction(&m_Ref);
 	}
@@ -67,7 +67,7 @@ public:
 	{
 	}
 
-	~CSmartLibgit2Ref()
+	virtual ~CSmartLibgit2Ref()
 	{
 		Free();
 	}

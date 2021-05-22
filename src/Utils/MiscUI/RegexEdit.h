@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2017 - TortoiseGit
 // Copyright (C) 2011 - TortoiseSVN
@@ -37,7 +37,7 @@ public:
 protected:
 	DECLARE_MESSAGE_MAP()
 	afx_msg HBRUSH CtlColor(CDC* /*pDC*/, UINT /*nCtlColor*/);
-	virtual ULONG GetGestureStatus(CPoint ptTouch) override;
+	ULONG GetGestureStatus(CPoint ptTouch) override;
 
 private:
 	CBrush  m_invalidBkgnd;

@@ -41,8 +41,8 @@ public:
 	CString	m_NewBranch;
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
-	virtual BOOL OnInitDialog() override;
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	BOOL OnInitDialog() override;
 	afx_msg void OnBnClickedOk();
 
 	afx_msg void OnBnClickedChooseRadioHost();
@@ -54,7 +54,7 @@ protected:
 
 	afx_msg void OnBnClickedCheckBranch();
 	void SetDefaultName();
-	virtual void OnVersionChanged() override;
+	void OnVersionChanged() override;
 	afx_msg void OnDestroy();
 	afx_msg void OnCbnEditchangeComboboxexVersion();
 	afx_msg void OnEnChangeEditBranch();

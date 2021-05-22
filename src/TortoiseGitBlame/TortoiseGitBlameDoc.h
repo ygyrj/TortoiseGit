@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2008-2011, 2013, 2016-2017 - TortoiseGit
 
@@ -48,16 +48,16 @@ public:
 	CTGitPath m_GitPath;
 
 // Overrides
-	virtual BOOL OnNewDocument() override;
-	virtual BOOL OnOpenDocument(LPCWSTR lpszPathName) override;
+	BOOL OnNewDocument() override;
+	BOOL OnOpenDocument(LPCWSTR lpszPathName) override;
 	BOOL OnOpenDocument(LPCWSTR lpszPathName, CString Rev);
-	virtual void SetPathName(LPCWSTR lpszPathName, BOOL bAddToMRU = TRUE) override;
+	void SetPathName(LPCWSTR lpszPathName, BOOL bAddToMRU = TRUE) override;
 
 // Implementation
 	virtual ~CTortoiseGitBlameDoc();
 #ifdef _DEBUG
-	virtual void AssertValid() const override;
-	virtual void Dump(CDumpContext& dc) const override;
+	void AssertValid() const override;
+	void Dump(CDumpContext& dc) const override;
 #endif
 	CMainFrame *GetMainFrame()
 	{

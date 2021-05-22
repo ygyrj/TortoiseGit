@@ -30,8 +30,7 @@
 class SysInfo
 {
 private:
-	SysInfo();
-	~SysInfo();
+	SysInfo() = default;
 	// prevent cloning
 	SysInfo(const SysInfo&) = delete;
 	SysInfo& operator=(const SysInfo&) = delete;

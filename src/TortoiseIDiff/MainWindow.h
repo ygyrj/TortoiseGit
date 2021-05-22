@@ -21,7 +21,8 @@
 #include "BaseWindow.h"
 #include "PicWindow.h"
 #include "TortoiseIDiff.h"
-
+#include "resource.h"
+#include "ResString.h"
 #include <map>
 #include <CommCtrl.h>
 

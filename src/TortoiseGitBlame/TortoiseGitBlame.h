@@ -37,12 +37,12 @@ class CTortoiseGitBlameApp : public CWinAppEx
 {
 public:
 	CTortoiseGitBlameApp();
-	~CTortoiseGitBlameApp();
+	~CTortoiseGitBlameApp() override;
 	ULONG_PTR m_gdiplusToken;
 
 // Overrides
 public:
-	virtual BOOL InitInstance() override;
+	BOOL InitInstance() override;
 
 	BOOL LoadWindowPlacement(CRect& rectNormalPosition, int& nFlags, int& nShowCmd) override;
 	BOOL StoreWindowPlacement(const CRect& rectNormalPosition, int nFlags, int nShowCmd) override;
@@ -54,7 +54,7 @@ public:
 	afx_msg void OnAppAbout();
 	afx_msg void OnFileSettings();
 	DECLARE_MESSAGE_MAP()
-	virtual int ExitInstance() override;
+	int ExitInstance() override;
 };
 
 extern CTortoiseGitBlameApp theApp;

@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2015 - TortoiseGit
 
@@ -33,11 +33,11 @@ public:
 
 private:
 	// Prohibit construction from lvalues.
-	scope_exit_t(D&);
+	scope_exit_t(D&) = delete;
 
 	// Prohibit copying.
-	scope_exit_t(const scope_exit_t&);
-	scope_exit_t& operator=(const scope_exit_t&);
+	scope_exit_t(const scope_exit_t&) = delete;
+	scope_exit_t& operator=(const scope_exit_t&) = delete;
 
 	// Prohibit new/delete.
 	void* operator new(size_t) = delete;

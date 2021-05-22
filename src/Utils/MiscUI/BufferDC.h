@@ -1,8 +1,7 @@
-#pragma once
+﻿#pragma once
 #include "afxwin.h"
 
-class CBufferDC :
-	public CPaintDC
+class CBufferDC : public CPaintDC
 {
 	DECLARE_DYNAMIC(CBufferDC)
 
@@ -16,16 +15,16 @@ private:
 
 	RECT m_ClientRect;
 
-	BOOL m_bBoundsUpdated;
+	BOOL m_bBoundsUpdated = FALSE;
 
 public:
 	CBufferDC(CWnd* pWnd);
-	~CBufferDC();
+	~CBufferDC() override;
 
 private:
-	void Flush();
+	void Flush() const;
 
 public:
 	UINT SetBoundsRect(LPCRECT lpRectBounds, UINT flags);
-	virtual BOOL RestoreDC(int nSavedDC);
+	BOOL RestoreDC(int nSavedDC) override;
 };

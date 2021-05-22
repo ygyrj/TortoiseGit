@@ -22,8 +22,8 @@
 class FetchProgressCommand : public RemoteProgressCommand
 {
 protected:
-	git_remote_autotag_option_t	m_AutoTag;
-	git_fetch_prune_t m_Prune;
+	git_remote_autotag_option_t m_AutoTag = GIT_REMOTE_DOWNLOAD_TAGS_AUTO;
+	git_fetch_prune_t m_Prune = GIT_FETCH_PRUNE_UNSPECIFIED;
 
 	static int FetchCallback(const git_indexer_progress *stats, void *payload)
 	{
@@ -31,12 +31,7 @@ protected:
 	}
 
 public:
-	FetchProgressCommand()
-		: m_AutoTag(GIT_REMOTE_DOWNLOAD_TAGS_AUTO)
-		, m_Prune(GIT_FETCH_PRUNE_UNSPECIFIED)
-	{}
-
 	void SetAutoTag(git_remote_autotag_option_t tag){ m_AutoTag = tag; }
 	void SetPrune(git_fetch_prune_t prune) { m_Prune = prune; }
-	virtual bool Run(CGitProgressList* list, CString& sWindowTitle, int& m_itemCountTotal, int& m_itemCount) override;
+	bool Run(CGitProgressList* list, CString& sWindowTitle, int& m_itemCountTotal, int& m_itemCount) override;
 };

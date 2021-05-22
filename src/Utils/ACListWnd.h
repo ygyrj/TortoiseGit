@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (c) 2003 by Andreas Kapust <info@akinstaller.de>; <http://www.codeproject.com/Articles/2607/AutoComplete-without-IAutoComplete>
 // Copyright (C) 2009, 2012-2013, 2015, 2018 - TortoiseGit
@@ -63,7 +63,7 @@ public:
 
 	// Implementierung
 public:
-	virtual ~CACListWnd();
+	~CACListWnd() override;
 	void DrawItem(CDC* pDC,long m_lItem,long width);
 
 	// Generierte Nachrichtenzuordnungsfunktionen

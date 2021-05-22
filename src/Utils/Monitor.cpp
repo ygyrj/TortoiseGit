@@ -19,8 +19,7 @@
 
 #include "stdafx.h"
 #include "Monitor.h"
-#include <vector>
-#include <algorithm>
+#include "Hash.h"
 
 static BOOL CALLBACK MonitorEnum(HMONITOR hMon, HDC /*hdc*/, LPRECT lprcMonitor, LPARAM pData)
 {

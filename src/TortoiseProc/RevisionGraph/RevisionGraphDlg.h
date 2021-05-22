@@ -78,11 +78,11 @@ protected:
 	bool			InitialSetMenu(const CString& settingName, bool defaultValue, int nId);
 	bool			ToggleSetMenu(const CString& settingName, int nId);
 
-	virtual void	DoDataExchange(CDataExchange* pDX) override;		// DDX/DDV support
-	virtual BOOL	OnInitDialog() override;
-	virtual void	OnCancel() override;
-	virtual void	OnOK() override;
-	virtual BOOL	PreTranslateMessage(MSG* pMsg) override;
+	void	DoDataExchange(CDataExchange* pDX) override;		// DDX/DDV support
+	BOOL	OnInitDialog() override;
+	void	OnCancel() override;
+	void	OnOK() override;
+	BOOL	PreTranslateMessage(MSG* pMsg) override;
 	afx_msg void	OnSize(UINT nType, int cx, int cy);
 	afx_msg void	OnViewFilter();
 	afx_msg void	OnViewZoomin();

@@ -25,9 +25,9 @@ private:
 	bool m_bIsForce;
 
 public:
-	virtual bool Run(CGitProgressList* list, CString& sWindowTitle, int& m_itemCountTotal, int& m_itemCount) override;
+	bool Run(CGitProgressList* list, CString& sWindowTitle, int& m_itemCountTotal, int& m_itemCount) override;
 
 	LFSSetLockedProgressCommand(bool isLock, bool isForce) : m_bIsLock(isLock), m_bIsForce(isForce)
 	{
-	};
+	}
 };

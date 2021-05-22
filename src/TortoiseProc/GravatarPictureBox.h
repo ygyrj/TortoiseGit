@@ -23,7 +23,7 @@ class CGravatar : public CStatic
 {
 public:
 	CGravatar();
-	virtual ~CGravatar();
+	~CGravatar() override;
 	void	Init();
 	bool	IsGravatarEnabled() const { return m_bEnableGravatar; }
 	void	EnableGravatar(bool value) { m_bEnableGravatar = value; }

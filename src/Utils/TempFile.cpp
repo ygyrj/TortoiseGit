@@ -18,7 +18,6 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //
 #include "stdafx.h"
-#include "registry.h"
 #include "TempFile.h"
 #include "TGitPath.h"
 #include "SmartHandle.h"

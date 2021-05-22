@@ -30,7 +30,7 @@ public:
 	/**
 	 * Executes the command.
 	 */
-	virtual bool			Execute() override
+	bool			Execute() override
 	{
 		return (reinterpret_cast<INT_PTR>(ShellExecute(GetExplorerHWND(), L"open", theApp.m_pszHelpFilePath, nullptr, nullptr, SW_SHOWNORMAL)) > 32);
 	}

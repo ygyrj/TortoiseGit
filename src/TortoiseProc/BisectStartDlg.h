@@ -1,4 +1,4 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2011 Sven Strickroth, <email@cs-ware.de>
 
@@ -37,9 +37,9 @@ public:
 	CString			m_sFirstBad;
 
 protected:
-	virtual BOOL OnInitDialog() override;
+	BOOL OnInitDialog() override;
 
-	virtual void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
+	void DoDataExchange(CDataExchange* pDX) override;    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
 

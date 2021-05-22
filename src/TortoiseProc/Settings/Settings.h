@@ -40,7 +40,7 @@ public:
 		delete page;
 	}
 	CSettingsPage(const CSettingsPage&) = delete;
-	CSettingsPage(CSettingsPage&& t)
+	CSettingsPage(CSettingsPage&& t) noexcept
 	{
 		this->pageName = t.pageName;
 		this->page = t.page;
@@ -96,5 +96,5 @@ public:
 
 protected:
 	DECLARE_MESSAGE_MAP()
-	virtual BOOL OnInitDialog() override;
+	BOOL OnInitDialog() override;
 };

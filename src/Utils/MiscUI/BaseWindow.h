@@ -21,9 +21,6 @@
 #pragma once
 #include "ResString.h"
 
-#include <string>
-
-
 /**
  * \ingroup Utils
  * A base window class.
@@ -33,6 +30,7 @@
 class CWindow
 {
 public:
+	virtual ~CWindow() = default;
 	virtual bool RegisterWindow(UINT style, HICON hIcon, HCURSOR hCursor,
 								HBRUSH hbrBackground, LPCWSTR lpszMenuName,
 								LPCWSTR lpszClassName, HICON hIconSm);
@@ -70,26 +68,22 @@ public:
 	bool IsWindowClosed() const { return bWindowClosed; };
 
 	operator HWND() const {return m_hwnd;}
+
 protected:
-	HINSTANCE hResource;
-	HWND m_hwnd;
-	HWND m_hParent;
-	bool bWindowClosed;
+	HINSTANCE hResource = nullptr;
+	HWND m_hwnd = nullptr;
+	HWND m_hParent = nullptr;
+	bool bWindowClosed = false;
 	std::wstring sClassName;
 	std::wstring sWindowTitle;
 	std::wstring sRegistryPath;
 	std::wstring sRegistryValue;
-	bool bWindowRestored;
+	bool bWindowRestored = false;
 
 	//constructor
 	CWindow(HINSTANCE hInstance, CONST WNDCLASSEX* wcx = nullptr)
-		: m_hwnd(nullptr)
-		, hResource(nullptr)
-		, m_hParent(nullptr)
-		, bWindowClosed(FALSE)
-		, bWindowRestored(false)
+		: hResource(hInstance)
 	{
-		hResource = hInstance;
 		if (wcx)
 			RegisterWindow(wcx);
 	};

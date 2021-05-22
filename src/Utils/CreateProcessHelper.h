@@ -28,6 +28,8 @@
 class CCreateProcessHelper
 {
 public:
+	CCreateProcessHelper() = delete;
+
 	static bool CreateProcess(LPCWSTR lpApplicationName, LPWSTR lpCommandLine, LPCWSTR lpCurrentDirectory, LPPROCESS_INFORMATION lpProcessInformation);
 	static bool CreateProcess(LPCWSTR lpApplicationName, LPWSTR lpCommandLine, LPPROCESS_INFORMATION lpProcessInformation);
 

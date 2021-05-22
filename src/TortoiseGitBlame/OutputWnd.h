@@ -21,7 +21,6 @@
 #pragma once
 
 #include "GitBlameLogList.h"
-#include "ProjectProperties.h"
 #include "GravatarPictureBox.h"
 #include <unordered_set>
 #include "DockablePaneUnscaledStoredState.h"
@@ -62,7 +61,7 @@ public:
 
 // Implementation
 public:
-	virtual ~COutputWnd();
+	~COutputWnd() override;
 	afx_msg void OnLvnItemchangedLoglist(NMHDR *pNMHDR, LRESULT *pResult);
 	int	LoadHistory(CString filename, CString revision, bool follow);
 	int	LoadHistory(std::unordered_set<CGitHash>& hashes);

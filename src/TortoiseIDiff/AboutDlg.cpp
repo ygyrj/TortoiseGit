@@ -22,7 +22,6 @@
 #include "registry.h"
 #include "Theme.h"
 #include "../version.h"
-#include <string>
 #include <Commdlg.h>
 
 
@@ -30,10 +29,6 @@ CAboutDlg::CAboutDlg(HWND hParent)
     : m_hParent(hParent)
     , m_hHiddenWnd(0)
     , m_themeCallbackId(0)
-{
-}
-
-CAboutDlg::~CAboutDlg()
 {
 }
 
@@ -74,4 +69,3 @@ LRESULT CAboutDlg::DoCommand(int id)
     }
     return 1;
 }
-

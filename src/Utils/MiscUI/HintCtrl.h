@@ -30,7 +30,7 @@
 template <typename BaseType> class CHintCtrl : public BaseType
 {
 public:
-	CHintCtrl() : BaseType(), m_uiFont(nullptr)
+	CHintCtrl() : BaseType()
 	{
 		NONCLIENTMETRICS metrics = { 0 };
 		metrics.cbSize = sizeof(NONCLIENTMETRICS);
@@ -127,10 +127,9 @@ protected:
 
 private:
 	CString			m_sText;
-	HFONT			m_uiFont;
+	HFONT			m_uiFont = nullptr;
 };
 
 BEGIN_TEMPLATE_MESSAGE_MAP(CHintCtrl, BaseType, BaseType)
 	ON_WM_PAINT()
 END_MESSAGE_MAP()
-

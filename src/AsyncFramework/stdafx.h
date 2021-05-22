@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
  *   Copyright (C) 2009-2010 by Stefan Fuhrmann                            *
  *   stefanfuhrmann@alice-dsl.de                                           *
  *                                                                         *
@@ -29,7 +29,7 @@
 
 #define VC_EXTRALEAN            // Exclude rarely-used stuff from Windows headers
 
-#include <windows.h>
+#include <Windows.h>
 
 #include <assert.h>
 #include <process.h>
