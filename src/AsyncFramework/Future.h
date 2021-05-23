@@ -26,7 +26,7 @@ namespace async
 {
 
 /**
- * Execute a call to a function asynchronuously in the background.
+ * Execute a call to a function asynchronously in the background.
  * Return the result in \ref GetResult. The latter will wait for
  * the call to finished, if necessary.
  *
@@ -65,7 +65,7 @@ private:
             : func (func)
             , result (result)
         {
-            Schedule (false, scheduler);
+            CJobBase::Schedule (false, scheduler);
         }
     };
 
@@ -92,7 +92,7 @@ private:
             , func (func)
             , result (result)
         {
-            Schedule (false, scheduler);
+            CJobBase::Schedule (false, scheduler);
         }
     };
 
@@ -119,7 +119,7 @@ private:
             , func (func)
             , result (result)
         {
-            Schedule (false, scheduler);
+            CJobBase::Schedule (false, scheduler);
         }
     };
 
@@ -148,7 +148,7 @@ private:
             , func (func)
             , result (result)
         {
-            Schedule (false, scheduler);
+            CJobBase::Schedule (false, scheduler);
         }
     };
 
@@ -177,7 +177,7 @@ private:
             , func (func)
             , result (result)
         {
-            Schedule (false, scheduler);
+            CJobBase::Schedule (false, scheduler);
         }
     };
 
@@ -208,7 +208,7 @@ private:
             , func (func)
             , result (result)
         {
-            Schedule (false, scheduler);
+            CJobBase::Schedule (false, scheduler);
         }
     };
 
@@ -239,7 +239,7 @@ private:
             , func (func)
             , result (result)
         {
-            Schedule (false, scheduler);
+            CJobBase::Schedule (false, scheduler);
         }
     };
 
@@ -272,7 +272,7 @@ private:
             , func (func)
             , result (result)
         {
-            Schedule (false, scheduler);
+            CJobBase::Schedule (false, scheduler);
         }
     };
 

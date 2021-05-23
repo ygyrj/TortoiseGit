@@ -7,5 +7,5 @@
 
 #pragma warning(push)
 #include <iostream>
-#include <Windows.h>
+#include <windows.h>
 #pragma warning(pop)

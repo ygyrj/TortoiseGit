@@ -1,7 +1,7 @@
 ﻿// TortoiseGit - a Windows shell extension for easy version control
 
 // Copyright (C) 2019 - TortoiseGit
-// Copyright (C) 2003-2006, 2012-2014 - TortoiseSVN
+// Copyright (C) 2003-2006, 2012-2014, 2021 - TortoiseSVN
 
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -136,18 +136,18 @@ void CUtils::Error()
 		fwprintf(stderr, L"%s\n", static_cast<LPCWSTR>(errorDetails));
 }
 
-void CUtils::SearchReplace(std::wstring& str, const std::wstring& toreplace, const std::wstring& replacewith)
+void CUtils::SearchReplace(std::wstring& str, const std::wstring& toReplace, const std::wstring& replaceWith)
 {
 	std::wstring result;
 	std::wstring::size_type pos = 0;
-	for ( ; ; ) // while (true)
+	for (;;) // while (true)
 	{
-		std::wstring::size_type next = str.find(toreplace, pos);
-		result.append(str, pos, next-pos);
-		if( next != std::string::npos )
+		std::wstring::size_type next = str.find(toReplace, pos);
+		result.append(str, pos, next - pos);
+		if (next != std::string::npos)
 		{
-			result.append(replacewith);
-			pos = next + toreplace.size();
+			result.append(replaceWith);
+			pos = next + toReplace.size();
 		}
 		else
 		{

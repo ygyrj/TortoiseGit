@@ -321,7 +321,7 @@ private:
 
     /**
      * Per-scheduler thread pool. It comprises of two sub-pools:
-     * \ref running contains all threads that currenty execute
+     * \ref running contains all threads that currently execute
      * jobs whereas \ref suspended holds currently unused threads.
      *
      * If the latter is depleted, up to \ref maxFromShared

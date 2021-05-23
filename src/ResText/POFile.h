@@ -1,6 +1,6 @@
-// TortoiseGit - a Windows shell extension for easy version control
+﻿// TortoiseGit - a Windows shell extension for easy version control
 
-// Copyright (C) 2003-2007, 2011, 2015-2016 - TortoiseSVN
+// Copyright (C) 2003-2007, 2011, 2015-2016, 2021 - TortoiseSVN
 
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -22,16 +22,16 @@
 #include <vector>
 #include <tuple>
 
-typedef struct tagResourceEntry
+struct TagResourceEntry
 {
 	WORD                        menuID;
-	std::vector<std::wstring>   translatorcomments;
-	std::vector<std::wstring>   automaticcomments;
+	std::vector<std::wstring>   translatorComments;
+	std::vector<std::wstring>   automaticComments;
 	std::set<std::wstring>      resourceIDs;
 	std::wstring                flag;
-	std::wstring                msgstr;
-	std::wstring                headerfile;
-} RESOURCEENTRY, * LPRESOURCEENTRY;
+	std::wstring                msgStr;
+	std::wstring                headerFile;
+};
 
 /**
  * \ingroup ResText
@@ -41,7 +41,7 @@ typedef struct tagResourceEntry
  * Provides methods to load and save a po-file with the translation information
  * we need for ResText.
  */
-class CPOFile : public std::map<std::wstring, RESOURCEENTRY>
+class CPOFile : public std::map<std::wstring, TagResourceEntry>
 {
 public:
 	CPOFile();
@@ -49,12 +49,12 @@ public:
 
 	BOOL ParseFile(LPCWSTR szPath, BOOL bUpdateExisting, bool bAdjustEOLs);
 	BOOL SaveFile(LPCWSTR szPath, LPCWSTR lpszHeaderFile);
-	void SetQuiet(BOOL bQuiet = TRUE) {m_bQuiet = bQuiet;}
+	void SetQuiet(BOOL bQuiet = TRUE) { m_bQuiet = bQuiet; }
 
 	std::vector<std::tuple<std::wstring, std::wstring>> m_regexes;
 
 private:
-	void AdjustEOLs(std::wstring& str);
-	BOOL m_bQuiet;
-	bool m_bAdjustEOLs;
+	static void AdjustEOLs(std::wstring& str);
+	BOOL        m_bQuiet;
+	bool        m_bAdjustEOLs;
 };
