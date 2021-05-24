@@ -28,10 +28,7 @@ template <typename HandleType, void FreeFunction(HandleType*)>
 class CSmartBuffer
 {
 public:
-	CSmartBuffer()
-		: m_Ref({0})
-	{
-	}
+	CSmartBuffer() = default;
 
 	operator HandleType*()
 	{
@@ -48,11 +45,11 @@ public:
 		FreeFunction(&m_Ref);
 	}
 
-private:
 	CSmartBuffer(const CSmartBuffer&) = delete;
 	CSmartBuffer& operator=(const CSmartBuffer&) = delete;
 
-	HandleType m_Ref;
+private:
+	HandleType m_Ref = { 0 };
 };
 
 using CAutoBuf		= CSmartBuffer<git_buf,			git_buf_dispose>;
@@ -62,11 +59,7 @@ template <typename ReferenceType, void FreeFunction(ReferenceType*)>
 class CSmartLibgit2Ref
 {
 public:
-	CSmartLibgit2Ref()
-		: m_Ref(nullptr)
-	{
-	}
-
+	CSmartLibgit2Ref() = default;
 	virtual ~CSmartLibgit2Ref()
 	{
 		Free();
@@ -119,12 +112,11 @@ public:
 		return m_Ref != nullptr;
 	}
 
-private:
 	CSmartLibgit2Ref(const CSmartLibgit2Ref&) = delete;
 	CSmartLibgit2Ref& operator=(const CSmartLibgit2Ref&) = delete;
 
 protected:
-	ReferenceType* m_Ref;
+	ReferenceType* m_Ref = nullptr;
 };
 
 using CAutoObject				= CSmartLibgit2Ref<git_object,				git_object_free>;
@@ -151,14 +143,14 @@ using CAutoMailmap				= CSmartLibgit2Ref<git_mailmap,				git_mailmap_free>;
 class CAutoRepository : public CSmartLibgit2Ref<git_repository, git_repository_free>
 {
 public:
-	CAutoRepository() {};
+	CAutoRepository() = default;
 
-	explicit CAutoRepository(git_repository*&& h)
+	explicit CAutoRepository(git_repository*&& h) noexcept
 	{
 		m_Ref = h;
 	}
 
-	CAutoRepository(CAutoRepository&& that)
+	CAutoRepository(CAutoRepository&& that) noexcept
 	{
 		m_Ref = that.Detach();
 	}
@@ -180,7 +172,6 @@ public:
 	}
 #endif
 
-private:
 	CAutoRepository(const CAutoRepository&) = delete;
 	CAutoRepository& operator=(const CAutoRepository&) = delete;
 
@@ -194,14 +185,13 @@ protected:
 class CAutoCommit : public CSmartLibgit2Ref<git_commit, git_commit_free>
 {
 public:
-	CAutoCommit() {}
+	CAutoCommit() = default;
 
-	explicit CAutoCommit(git_commit*&& h)
+	explicit CAutoCommit(git_commit*&& h) noexcept
 	{
 		m_Ref = h;
 	}
 
-private:
 	CAutoCommit(const CAutoCommit&) = delete;
 	CAutoCommit& operator=(const CAutoCommit&) = delete;
 };
@@ -209,7 +199,7 @@ private:
 class CAutoTree : public CSmartLibgit2Ref<git_tree, git_tree_free>
 {
 public:
-	CAutoTree() {};
+	CAutoTree() = default;
 
 	void ConvertFrom(CAutoObject&& h)
 	{
@@ -220,7 +210,6 @@ public:
 		}
 	}
 
-private:
 	CAutoTree(const CAutoTree&) = delete;
 	CAutoTree& operator=(const CAutoTree&) = delete;
 };
@@ -228,7 +217,7 @@ private:
 class CAutoConfig : public CSmartLibgit2Ref<git_config, git_config_free>
 {
 public:
-	CAutoConfig() {}
+	CAutoConfig() = default;
 
 	CAutoConfig(const CAutoRepository& repo)
 	{
@@ -288,7 +277,6 @@ public:
 	}
 #endif
 
-private:
 	CAutoConfig(const CAutoConfig&) = delete;
 	CAutoConfig& operator=(const CAutoConfig&) = delete;
 };
