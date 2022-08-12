@@ -1,0 +1,61 @@
+From ffb613f7d75366c992691c43d713fb5be4972f9a Mon Sep 17 00:00:00 2001
+From: Sven Strickroth <email@cs-ware.de>
+Date: Fri, 12 Aug 2022 18:57:39 +0200
+Subject: [PATCH] experimental.h: allow building without CMake-generated
+ experimental header
+
+Signed-off-by: Sven Strickroth <email@cs-ware.de>
+---
+ include/git2.h     | 4 +++-
+ include/git2/oid.h | 4 +++-
+ src/libgit2/oid.h  | 4 +++-
+ 3 files changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/include/git2.h b/include/git2.h
+index 3457e5f04..d156c3400 100644
+--- a/include/git2.h
++++ b/include/git2.h
+@@ -28,7 +28,9 @@
+ #include "git2/diff.h"
+ #include "git2/email.h"
+ #include "git2/errors.h"
+-#include "git2/experimental.h"
++#ifndef LIBGIT2_NO_EXPERIMENTAL_H
++# include "git2/experimental.h"
++#endif
+ #include "git2/filter.h"
+ #include "git2/global.h"
+ #include "git2/graph.h"
+diff --git a/include/git2/oid.h b/include/git2/oid.h
+index 399b7b907..d1e01198c 100644
+--- a/include/git2/oid.h
++++ b/include/git2/oid.h
+@@ -9,7 +9,9 @@
+ 
+ #include "common.h"
+ #include "types.h"
+-#include "experimental.h"
++#ifndef LIBGIT2_NO_EXPERIMENTAL_H
++# include "experimental.h"
++#endif
+ 
+ /**
+  * @file git2/oid.h
+diff --git a/src/libgit2/oid.h b/src/libgit2/oid.h
+index d775e180b..f140d2228 100644
+--- a/src/libgit2/oid.h
++++ b/src/libgit2/oid.h
+@@ -9,7 +9,9 @@
+ 
+ #include "common.h"
+ 
+-#include "git2/experimental.h"
++#ifndef LIBGIT2_NO_EXPERIMENTAL_H
++# include "git2/experimental.h"
++#endif
+ #include "git2/oid.h"
+ #include "hash.h"
+ 
+-- 
+2.37.1.windows.1
+

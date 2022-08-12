@@ -21,7 +21,7 @@
 #include "PathUtils.h"
 #include <memory>
 #include "StringUtils.h"
-#include "../../ext/libgit2/src/win32/reparse.h"
+#include "../../ext/libgit2/src/util/win32/reparse.h"
 #include "SmartHandle.h"
 #include <assert.h>
 

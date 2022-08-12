@@ -257,7 +257,8 @@ int GetStatus(const wchar_t* path, GitWCRev_t& GitStat)
 	if (git_repository_head_unborn(repo))
 	{
 		memset(GitStat.HeadHash, 0, sizeof(GitStat.HeadHash));
-		strncpy_s(GitStat.HeadHashReadable, GIT_OID_HEX_ZERO, strlen(GIT_OID_HEX_ZERO));
+		memset(GitStat.HeadHashReadable, '0', sizeof(GitStat.HeadHashReadable));
+		GitStat.HeadHashReadable[sizeof(GitStat.HeadHashReadable) - 1] = '\0';
 		GitStat.bIsUnborn = TRUE;
 
 		CAutoReference symbolicHead;

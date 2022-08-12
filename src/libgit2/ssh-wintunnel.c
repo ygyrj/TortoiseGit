@@ -22,7 +22,7 @@
 #include "str.h"
 #include "netops.h"
 #include "http_parser.h"
-#include "../../ext/libgit2/src/transports/smart.h"
+#include "../../ext/libgit2/src/libgit2/transports/smart.h"
 #include "system-call.h"
 #include "ssh-wintunnel.h"
 

@@ -13,6 +13,7 @@
 [submodule "ext/libgit2"]
 	path = ext/libgit2
 	url = https://github.com/libgit2/libgit2.git
+	branch = main
 [submodule "ext/spell"]
 	path = ext/spell
 	url = https://github.com/LibreOffice/dictionaries
