@@ -127,7 +127,6 @@
 #define IDB_BITMAP_REFTYPE              336
 #define IDI_IMPORTPATHCES_BKG           337
 #define IDD_SETTINGSOVERLAYHANDLERS     338
-#define IDI_LIBRARY                     339
 #define IDD_SETTINGS_CONFIG             340
 #define IDI_RESTORE                     341
 #define IDI_RESTOREOVL                  342
